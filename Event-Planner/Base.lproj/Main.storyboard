@@ -143,8 +143,12 @@
                     <tabBarItem key="tabBarItem" title="Create Event" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="eventAddress" destination="pw2-Lp-qpk" id="3pS-60-pnt"/>
+                        <outlet property="eventDate" destination="ZPg-Wn-PVs" id="twy-yx-Nc5"/>
                         <outlet property="eventDescription" destination="Tc1-hD-DPQ" id="0hE-KU-S5h"/>
+                        <outlet property="eventEndTime" destination="I8z-wE-2G8" id="0Ci-ki-hhl"/>
+                        <outlet property="eventLocationName" destination="XeB-gn-oMa" id="PMF-aQ-pNJ"/>
                         <outlet property="eventName" destination="5qa-IJ-lCA" id="3hK-kN-sb1"/>
+                        <outlet property="eventStartTime" destination="NBm-Gu-H7r" id="VtJ-Cv-tMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

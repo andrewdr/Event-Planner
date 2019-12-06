@@ -12,8 +12,10 @@ class CreateEventController: UIViewController {
     
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var eventDescription: UITextField!
-    @IBOutlet weak var eventTime: UITextField!
-    @IBOutlet weak var eventDate: UITextField!
+    @IBOutlet weak var eventDate: UIDatePicker!
+    @IBOutlet weak var eventStartTime: UIDatePicker!
+    @IBOutlet weak var eventEndTime: UIDatePicker!
+    @IBOutlet weak var eventLocationName: UITextField!
     @IBOutlet weak var eventAddress: UITextField!
     
 
