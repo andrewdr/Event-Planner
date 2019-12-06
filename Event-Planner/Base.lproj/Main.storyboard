@@ -10,12 +10,12 @@
         <!--Create Event-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Event_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="CreateEventController" customModule="Event_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Name" borderStyle="roundedRect" placeholder="Event Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5qa-IJ-lCA">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Name" borderStyle="roundedRect" placeholder="Event Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5qa-IJ-lCA">
                                 <rect key="frame" x="146.5" y="113" width="121" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="xma-Jl-DZM"/>
@@ -32,7 +32,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Description" borderStyle="roundedRect" placeholder="Event Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tc1-hD-DPQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Description" borderStyle="roundedRect" placeholder="Event Description" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tc1-hD-DPQ">
                                 <rect key="frame" x="20" y="167" width="374" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="PQr-GN-JKn"/>
@@ -40,56 +40,112 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Time" borderStyle="roundedRect" placeholder="Event Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U3z-AS-jP2">
-                                <rect key="frame" x="147" y="387" width="120.5" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="daM-Uz-tP3"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Location Name" borderStyle="roundedRect" placeholder="Applebees" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-gn-oMa">
+                                <rect key="frame" x="20" y="684" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Location (Address)" borderStyle="roundedRect" placeholder="Event Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pw2-Lp-qpk">
-                                <rect key="frame" x="20" y="495" width="374" height="34"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ZPg-Wn-PVs">
+                                <rect key="frame" x="20" y="416" width="374" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="zgC-Kz-le7"/>
+                                    <constraint firstAttribute="height" constant="50" id="Aou-er-52U"/>
+                                </constraints>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xD-dE-4lO">
+                                <rect key="frame" x="20" y="387" width="84" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="F4a-r4-QvE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Date" borderStyle="roundedRect" placeholder="Event Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kcE-JA-RnK">
-                                <rect key="frame" x="147" y="441" width="120.5" height="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-8y-IFm">
+                                <rect key="frame" x="20" y="486" width="128" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="rvu-7t-Fq7"/>
+                                    <constraint firstAttribute="height" constant="21" id="wXY-Z8-xx7"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="NBm-Gu-H7r">
+                                <rect key="frame" x="20" y="515" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2Z9-vc-dwD"/>
+                                </constraints>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwN-wD-DfV">
+                                <rect key="frame" x="20" y="585" width="119" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="UsT-OP-FWb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="I8z-wE-2G8">
+                                <rect key="frame" x="20" y="614" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="poC-LH-Jzg"/>
+                                </constraints>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Address" borderStyle="roundedRect" placeholder="Event Address" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pw2-Lp-qpk">
+                                <rect key="frame" x="20" y="738" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="pw2-Lp-qpk" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="7F8-qH-Nf0"/>
+                            <constraint firstItem="NBm-Gu-H7r" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="3vx-T5-QHU"/>
+                            <constraint firstItem="Tc1-hD-DPQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="3xv-nd-Rgt"/>
+                            <constraint firstItem="2xD-dE-4lO" firstAttribute="top" secondItem="Tc1-hD-DPQ" secondAttribute="bottom" constant="20" id="5wx-lg-315"/>
+                            <constraint firstItem="ZPg-Wn-PVs" firstAttribute="top" secondItem="2xD-dE-4lO" secondAttribute="bottom" constant="8" id="9BU-3f-fiG"/>
+                            <constraint firstItem="pw2-Lp-qpk" firstAttribute="top" secondItem="XeB-gn-oMa" secondAttribute="bottom" constant="20" id="9Wq-v1-vUk"/>
                             <constraint firstItem="5qa-IJ-lCA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="BOa-rI-Iaw"/>
-                            <constraint firstItem="kcE-JA-RnK" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Ezg-Tt-J7f"/>
-                            <constraint firstItem="kcE-JA-RnK" firstAttribute="top" secondItem="U3z-AS-jP2" secondAttribute="bottom" constant="20" id="Nix-PU-NXr"/>
-                            <constraint firstItem="pw2-Lp-qpk" firstAttribute="top" secondItem="kcE-JA-RnK" secondAttribute="bottom" constant="20" id="Oe9-GD-X0L"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Tc1-hD-DPQ" secondAttribute="trailing" constant="20" id="QbC-8Z-YVP"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="pw2-Lp-qpk" secondAttribute="trailing" constant="20" id="RG0-q6-M3S"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="XeB-gn-oMa" secondAttribute="trailing" constant="20" id="Bz2-MC-g2e"/>
+                            <constraint firstItem="pw2-Lp-qpk" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="JRF-4I-J3K"/>
+                            <constraint firstItem="pw2-Lp-qpk" firstAttribute="top" secondItem="XeB-gn-oMa" secondAttribute="bottom" constant="20" id="Jr4-gC-NAG"/>
+                            <constraint firstItem="DwN-wD-DfV" firstAttribute="top" secondItem="NBm-Gu-H7r" secondAttribute="bottom" constant="20" id="NcV-xR-foj"/>
+                            <constraint firstItem="hsp-8y-IFm" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="Ofb-jW-9px"/>
+                            <constraint firstItem="XeB-gn-oMa" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="QHb-zy-BWH"/>
+                            <constraint firstItem="I8z-wE-2G8" firstAttribute="top" secondItem="DwN-wD-DfV" secondAttribute="bottom" constant="8" id="Qxl-gU-Z3z"/>
+                            <constraint firstItem="XeB-gn-oMa" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="Rs2-7U-dZ6"/>
+                            <constraint firstItem="I8z-wE-2G8" firstAttribute="top" secondItem="DwN-wD-DfV" secondAttribute="bottom" constant="8" id="SQw-zl-q0Z"/>
+                            <constraint firstItem="pw2-Lp-qpk" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="TWD-gQ-QgW"/>
                             <constraint firstItem="5qa-IJ-lCA" firstAttribute="top" secondItem="XIR-fu-a1r" secondAttribute="bottom" constant="30" id="TWw-am-pc4"/>
+                            <constraint firstItem="I8z-wE-2G8" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="Tvu-z5-xoJ"/>
+                            <constraint firstItem="hsp-8y-IFm" firstAttribute="top" secondItem="ZPg-Wn-PVs" secondAttribute="bottom" constant="20" id="U2q-S7-tVo"/>
                             <constraint firstItem="XIR-fu-a1r" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="U3D-5m-xXq"/>
-                            <constraint firstItem="Tc1-hD-DPQ" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="aXe-8T-eU2"/>
-                            <constraint firstItem="U3z-AS-jP2" firstAttribute="top" secondItem="Tc1-hD-DPQ" secondAttribute="bottom" constant="20" id="cgK-c2-M0w"/>
-                            <constraint firstItem="U3z-AS-jP2" firstAttribute="top" secondItem="Tc1-hD-DPQ" secondAttribute="bottom" constant="20" id="n6h-cm-XSN"/>
-                            <constraint firstItem="pw2-Lp-qpk" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="oYX-ro-yWx"/>
+                            <constraint firstItem="DwN-wD-DfV" firstAttribute="top" secondItem="NBm-Gu-H7r" secondAttribute="bottom" constant="20" id="Uee-Ck-DUf"/>
+                            <constraint firstItem="DwN-wD-DfV" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="XkW-kj-vVK"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="I8z-wE-2G8" secondAttribute="trailing" constant="20" id="ZR8-vG-io8"/>
+                            <constraint firstItem="NBm-Gu-H7r" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="e8a-dL-dXX"/>
+                            <constraint firstItem="ZPg-Wn-PVs" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="fcQ-9B-e2l"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="pw2-Lp-qpk" secondAttribute="trailing" constant="20" id="jL0-JV-BC9"/>
+                            <constraint firstItem="2xD-dE-4lO" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="jjH-ua-6D9"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="ZPg-Wn-PVs" secondAttribute="trailing" constant="20" id="knf-Js-TFP"/>
+                            <constraint firstItem="XeB-gn-oMa" firstAttribute="top" secondItem="I8z-wE-2G8" secondAttribute="bottom" constant="20" id="m0X-p2-FeA"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tc1-hD-DPQ" secondAttribute="trailing" constant="20" id="mpb-Cz-CG8"/>
+                            <constraint firstItem="I8z-wE-2G8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="oiQ-B3-F5O"/>
                             <constraint firstItem="Tc1-hD-DPQ" firstAttribute="top" secondItem="5qa-IJ-lCA" secondAttribute="bottom" constant="20" id="osP-Wp-hFN"/>
                             <constraint firstItem="Tc1-hD-DPQ" firstAttribute="top" secondItem="5qa-IJ-lCA" secondAttribute="bottom" constant="20" id="pXD-h0-kzV"/>
                             <constraint firstItem="Tc1-hD-DPQ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="q1d-7g-kry"/>
+                            <constraint firstItem="XeB-gn-oMa" firstAttribute="top" secondItem="I8z-wE-2G8" secondAttribute="bottom" constant="20" id="sXw-Td-sa6"/>
+                            <constraint firstItem="NBm-Gu-H7r" firstAttribute="top" secondItem="hsp-8y-IFm" secondAttribute="bottom" constant="8" id="t9V-hu-HVV"/>
                             <constraint firstItem="XIR-fu-a1r" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="wkt-ef-KL2"/>
-                            <constraint firstItem="U3z-AS-jP2" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="xTZ-fh-jWB"/>
-                            <constraint firstItem="pw2-Lp-qpk" firstAttribute="top" secondItem="kcE-JA-RnK" secondAttribute="bottom" constant="20" id="yoU-QN-gBz"/>
+                            <constraint firstItem="ZPg-Wn-PVs" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="xTP-FV-f1D"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="NBm-Gu-H7r" secondAttribute="trailing" constant="20" id="ziS-sH-JsH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create Event" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="eventAddress" destination="pw2-Lp-qpk" id="3pS-60-pnt"/>
+                        <outlet property="eventDescription" destination="Tc1-hD-DPQ" id="0hE-KU-S5h"/>
+                        <outlet property="eventName" destination="5qa-IJ-lCA" id="3hK-kN-sb1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
