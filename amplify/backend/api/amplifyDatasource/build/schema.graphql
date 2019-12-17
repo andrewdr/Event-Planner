@@ -1,0 +1,180 @@
+type CreateEvent {
+  eventName: String!
+  eventDescription: String!
+  eventDate: AWSDate!
+  eventStartTime: AWSTime!
+  eventEndTime: AWSTime!
+  eventLocationName: String!
+  eventAddress: String!
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelCreateEventConnection {
+  items: [CreateEvent]
+  nextToken: String
+  startedAt: AWSTimestamp
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelCreateEventFilterInput {
+  eventName: ModelStringInput
+  eventDescription: ModelStringInput
+  eventDate: ModelStringInput
+  eventStartTime: ModelStringInput
+  eventEndTime: ModelStringInput
+  eventLocationName: ModelStringInput
+  eventAddress: ModelStringInput
+  and: [ModelCreateEventFilterInput]
+  or: [ModelCreateEventFilterInput]
+  not: ModelCreateEventFilterInput
+}
+
+type Query {
+  syncCreateEvents(filter: ModelCreateEventFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelCreateEventConnection
+  getCreateEvent(id: ID!): CreateEvent
+  listCreateEvents(filter: ModelCreateEventFilterInput, limit: Int, nextToken: String): ModelCreateEventConnection
+}
+
+input CreateCreateEventInput {
+  eventName: String!
+  eventDescription: String!
+  eventDate: AWSDate!
+  eventStartTime: AWSTime!
+  eventEndTime: AWSTime!
+  eventLocationName: String!
+  eventAddress: String!
+  _version: Int
+}
+
+input UpdateCreateEventInput {
+  eventName: String
+  eventDescription: String
+  eventDate: AWSDate
+  eventStartTime: AWSTime
+  eventEndTime: AWSTime
+  eventLocationName: String
+  eventAddress: String
+  _version: Int
+}
+
+input DeleteCreateEventInput {
+  id: ID
+  _version: Int
+}
+
+type Mutation {
+  createCreateEvent(input: CreateCreateEventInput!, condition: ModelCreateEventConditionInput): CreateEvent
+  updateCreateEvent(input: UpdateCreateEventInput!, condition: ModelCreateEventConditionInput): CreateEvent
+  deleteCreateEvent(input: DeleteCreateEventInput!, condition: ModelCreateEventConditionInput): CreateEvent
+}
+
+input ModelCreateEventConditionInput {
+  eventName: ModelStringInput
+  eventDescription: ModelStringInput
+  eventDate: ModelStringInput
+  eventStartTime: ModelStringInput
+  eventEndTime: ModelStringInput
+  eventLocationName: ModelStringInput
+  eventAddress: ModelStringInput
+  and: [ModelCreateEventConditionInput]
+  or: [ModelCreateEventConditionInput]
+  not: ModelCreateEventConditionInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Subscription {
+  onCreateCreateEvent: CreateEvent @aws_subscribe(mutations: ["createCreateEvent"])
+  onUpdateCreateEvent: CreateEvent @aws_subscribe(mutations: ["updateCreateEvent"])
+  onDeleteCreateEvent: CreateEvent @aws_subscribe(mutations: ["deleteCreateEvent"])
+}

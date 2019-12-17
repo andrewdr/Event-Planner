@@ -1,10 +1,10 @@
-type Task @model {
-  id: ID!
-  title: String!
-  description: String
-  status: String
+type CreateEvent @model {
+  eventName: String!
+  eventDescription: String!
+  eventDate: AWSDate!
+  eventStartTime: AWSTime!
+  eventEndTime: AWSTime!
+  eventLocationName: String!
+  eventAddress: String!
 }
-type Note @model {
-  id: ID!
-  content: String!
-}
+
