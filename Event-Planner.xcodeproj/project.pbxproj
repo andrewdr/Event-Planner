@@ -5,7 +5,6 @@
 	};
 	objectVersion = 50;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		A14554780737FBCFE2E8AB06 /* Pods_Event_PlannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7EC7C09D8E731ADAE78FA3 /* Pods_Event_PlannerTests.framework */; };
 		B4425341699B137416C1CA26 /* Pods_Event_Planner_Event_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505357AE4FCF9708A503FB4A /* Pods_Event_Planner_Event_PlannerUITests.framework */; };
@@ -20,6 +19,8 @@
 		D39E5B6E239A083B00C5283C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39E5B6C239A083B00C5283C /* LaunchScreen.storyboard */; };
 		D39E5B79239A083B00C5283C /* Event_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B78239A083B00C5283C /* Event_PlannerTests.swift */; };
 		D39E5B84239A083B00C5283C /* Event_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B83239A083B00C5283C /* Event_PlannerUITests.swift */; };
+		EAB3143E6E8048A1BE076612 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 43D6BAD4037240B9A377EE68 /* awsconfiguration.json */; };
+		5C884E1D9E3040B6A0F6FD7D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A0246743125E4C6DB1979F18 /* amplifyconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,10 @@
 		D39E5B7F239A083B00C5283C /* Event-PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Event-PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39E5B83239A083B00C5283C /* Event_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_PlannerUITests.swift; sourceTree = "<group>"; };
 		D39E5B85239A083B00C5283C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50BBF9C2853E48808003420E /* amplifyxc.config */ = {isa = PBXFileReference; name = "amplifyxc.config"; path = "/Users/Theclout/Desktop/Event-Planner/amplifyxc.config"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		43D6BAD4037240B9A377EE68 /* awsconfiguration.json */ = {isa = PBXFileReference; name = "awsconfiguration.json"; path = "/Users/Theclout/Desktop/Event-Planner/awsconfiguration.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A0246743125E4C6DB1979F18 /* amplifyconfiguration.json */ = {isa = PBXFileReference; name = "amplifyconfiguration.json"; path = "/Users/Theclout/Desktop/Event-Planner/amplifyconfiguration.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC1E481B4F68402CBBBDD200 /* amplify */ = {isa = PBXFileReference; name = "amplify"; path = "/Users/Theclout/Desktop/Event-Planner/amplify"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,10 @@
 				D39E5B5A239A083900C5283C /* Products */,
 				1ADAE5BCDDF73F3D3AE5F2C6 /* Pods */,
 				BAE136FED3D0A47B3D496059 /* Frameworks */,
+				50BBF9C2853E48808003420E /* amplifyxc.config */,
+				43D6BAD4037240B9A377EE68 /* awsconfiguration.json */,
+				A0246743125E4C6DB1979F18 /* amplifyconfiguration.json */,
+				FC1E481B4F68402CBBBDD200 /* amplify */,
 			);
 			sourceTree = "<group>";
 		};
@@ -287,6 +296,8 @@
 				D39E5B6E239A083B00C5283C /* LaunchScreen.storyboard in Resources */,
 				D39E5B6B239A083B00C5283C /* Assets.xcassets in Resources */,
 				D39E5B66239A083900C5283C /* Main.storyboard in Resources */,
+				EAB3143E6E8048A1BE076612 /* awsconfiguration.json in Resources */,
+				5C884E1D9E3040B6A0F6FD7D /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
