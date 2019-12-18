@@ -1,0 +1,10 @@
+type CreateEvent @model {
+  eventName: String!
+  eventDescription: String!
+  eventDate: AWSDate!
+  eventStartTime: AWSTime!
+  eventEndTime: AWSTime!
+  eventLocationName: String!
+  eventAddress: String!
+}
+

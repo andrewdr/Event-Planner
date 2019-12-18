@@ -1,0 +1,15 @@
+{
+    "amplify": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-event-planner-amplify-162512-authRole",
+            "UnauthRoleArn": "arn:aws:iam::248792958204:role/amplify-event-planner-amplify-162512-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::248792958204:role/amplify-event-planner-amplify-162512-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-event-planner-amplify-162512-deployment",
+            "UnauthRoleName": "amplify-event-planner-amplify-162512-unauthRole",
+            "StackName": "amplify-event-planner-amplify-162512",
+            "StackId": "arn:aws:cloudformation:us-east-2:248792958204:stack/amplify-event-planner-amplify-162512/17ed9af0-211c-11ea-b2cf-0672668ff2ce",
+            "AmplifyAppId": "dthrng5j2eawn"
+        }
+    }
+}

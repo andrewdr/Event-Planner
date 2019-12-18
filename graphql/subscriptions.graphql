@@ -1,0 +1,34 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateCreateEvent {
+  onCreateCreateEvent {
+    eventName
+    eventDescription
+    eventDate
+    eventStartTime
+    eventEndTime
+    eventLocationName
+    eventAddress
+  }
+}
+subscription OnUpdateCreateEvent {
+  onUpdateCreateEvent {
+    eventName
+    eventDescription
+    eventDate
+    eventStartTime
+    eventEndTime
+    eventLocationName
+    eventAddress
+  }
+}
+subscription OnDeleteCreateEvent {
+  onDeleteCreateEvent {
+    eventName
+    eventDescription
+    eventDate
+    eventStartTime
+    eventEndTime
+    eventLocationName
+    eventAddress
+  }
+}

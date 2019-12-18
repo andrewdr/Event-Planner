@@ -1,0 +1,42 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-event-planner-amplify-162512-authRole",
+            "UnauthRoleArn": "arn:aws:iam::248792958204:role/amplify-event-planner-amplify-162512-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::248792958204:role/amplify-event-planner-amplify-162512-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-event-planner-amplify-162512-deployment",
+            "UnauthRoleName": "amplify-event-planner-amplify-162512-unauthRole",
+            "StackName": "amplify-event-planner-amplify-162512",
+            "StackId": "arn:aws:cloudformation:us-east-2:248792958204:stack/amplify-event-planner-amplify-162512/17ed9af0-211c-11ea-b2cf-0672668ff2ce",
+            "AmplifyAppId": "dthrng5j2eawn"
+        }
+    },
+    "api": {
+        "amplifyDatasource": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [],
+                    "defaultAuthentication": {
+                        "authenticationType": "API_KEY",
+                        "apiKeyConfig": {
+                            "description": "EPapi",
+                            "apiKeyExpirationDays": "30"
+                        }
+                    }
+                },
+                "GraphQLAPIIdOutput": "jgkh3wf6pvhujco2cs5jnjdsne",
+                "GraphQLAPIEndpointOutput": "https://bcilfxazzffkxdiwpydn55uija.appsync-api.us-east-2.amazonaws.com/graphql",
+                "GraphQLAPIKeyOutput": "da2-nmklykvqe5dircr6jn2dmk4vbe"
+            },
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-event-planner-amplify-162512-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+                "logicalId": "apiamplifyDatasource"
+            },
+            "lastPushTimeStamp": "2019-12-18T03:58:04.495Z",
+            "lastPushDirHash": "ox1PBbs4RxxYvJiMJKpmxwg2g8U="
+        }
+    }
+}

@@ -1,0 +1,43 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateCreateEvent(
+  $input: CreateCreateEventInput!
+  $condition: ModelCreateEventConditionInput
+) {
+  createCreateEvent(input: $input, condition: $condition) {
+    eventName
+    eventDescription
+    eventDate
+    eventStartTime
+    eventEndTime
+    eventLocationName
+    eventAddress
+  }
+}
+mutation UpdateCreateEvent(
+  $input: UpdateCreateEventInput!
+  $condition: ModelCreateEventConditionInput
+) {
+  updateCreateEvent(input: $input, condition: $condition) {
+    eventName
+    eventDescription
+    eventDate
+    eventStartTime
+    eventEndTime
+    eventLocationName
+    eventAddress
+  }
+}
+mutation DeleteCreateEvent(
+  $input: DeleteCreateEventInput!
+  $condition: ModelCreateEventConditionInput
+) {
+  deleteCreateEvent(input: $input, condition: $condition) {
+    eventName
+    eventDescription
+    eventDate
+    eventStartTime
+    eventEndTime
+    eventLocationName
+    eventAddress
+  }
+}
