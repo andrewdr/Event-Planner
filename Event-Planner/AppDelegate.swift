@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Amplify
+import AmplifyPlugins
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
