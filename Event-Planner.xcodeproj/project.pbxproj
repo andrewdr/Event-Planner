@@ -3,9 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
+
 /* Begin PBXBuildFile section */
+		5C884E1D9E3040B6A0F6FD7D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A0246743125E4C6DB1979F18 /* amplifyconfiguration.json */; };
 		A14554780737FBCFE2E8AB06 /* Pods_Event_PlannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7EC7C09D8E731ADAE78FA3 /* Pods_Event_PlannerTests.framework */; };
 		B4425341699B137416C1CA26 /* Pods_Event_Planner_Event_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505357AE4FCF9708A503FB4A /* Pods_Event_Planner_Event_PlannerUITests.framework */; };
 		C8BF8FE51E8CB22C74123A2E /* Pods_Event_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B83CA69F239F0C2CC3BCF6A /* Pods_Event_Planner.framework */; };
@@ -20,7 +22,6 @@
 		D39E5B79239A083B00C5283C /* Event_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B78239A083B00C5283C /* Event_PlannerTests.swift */; };
 		D39E5B84239A083B00C5283C /* Event_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B83239A083B00C5283C /* Event_PlannerUITests.swift */; };
 		EAB3143E6E8048A1BE076612 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 43D6BAD4037240B9A377EE68 /* awsconfiguration.json */; };
-		5C884E1D9E3040B6A0F6FD7D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A0246743125E4C6DB1979F18 /* amplifyconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +46,11 @@
 		0B83CA69F239F0C2CC3BCF6A /* Pods_Event_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3023D9E8B9959F25D79D6109 /* Pods-Event-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-Planner.release.xcconfig"; path = "Target Support Files/Pods-Event-Planner/Pods-Event-Planner.release.xcconfig"; sourceTree = "<group>"; };
 		34F389E21BC278CBF06CF16D /* Pods-Event-Planner-Event-PlannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-Planner-Event-PlannerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Event-Planner-Event-PlannerUITests/Pods-Event-Planner-Event-PlannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		43D6BAD4037240B9A377EE68 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = awsconfiguration.json; path = "/Users/Theclout/Desktop/Event-Planner/awsconfiguration.json"; sourceTree = "<group>"; };
 		505357AE4FCF9708A503FB4A /* Pods_Event_Planner_Event_PlannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_Planner_Event_PlannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50BBF9C2853E48808003420E /* amplifyxc.config */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = amplifyxc.config; path = "/Users/Theclout/Desktop/Event-Planner/amplifyxc.config"; sourceTree = "<group>"; };
 		60581125853DF4FF0DE6A0AD /* Pods-Event-Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-Planner.debug.xcconfig"; path = "Target Support Files/Pods-Event-Planner/Pods-Event-Planner.debug.xcconfig"; sourceTree = "<group>"; };
+		A0246743125E4C6DB1979F18 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = amplifyconfiguration.json; path = "/Users/Theclout/Desktop/Event-Planner/amplifyconfiguration.json"; sourceTree = "<group>"; };
 		BF7EC7C09D8E731ADAE78FA3 /* Pods_Event_PlannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_PlannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1FAC0E734E3483EBF8091C /* Pods-Event-PlannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-PlannerTests.debug.xcconfig"; path = "Target Support Files/Pods-Event-PlannerTests/Pods-Event-PlannerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C4DEF7488AC32F2A75F2D2 /* Pods-Event-Planner-Event-PlannerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-Planner-Event-PlannerUITests.release.xcconfig"; path = "Target Support Files/Pods-Event-Planner-Event-PlannerUITests/Pods-Event-Planner-Event-PlannerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,10 +70,9 @@
 		D39E5B7F239A083B00C5283C /* Event-PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Event-PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39E5B83239A083B00C5283C /* Event_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_PlannerUITests.swift; sourceTree = "<group>"; };
 		D39E5B85239A083B00C5283C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50BBF9C2853E48808003420E /* amplifyxc.config */ = {isa = PBXFileReference; name = "amplifyxc.config"; path = "/Users/Theclout/Desktop/Event-Planner/amplifyxc.config"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		43D6BAD4037240B9A377EE68 /* awsconfiguration.json */ = {isa = PBXFileReference; name = "awsconfiguration.json"; path = "/Users/Theclout/Desktop/Event-Planner/awsconfiguration.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A0246743125E4C6DB1979F18 /* amplifyconfiguration.json */ = {isa = PBXFileReference; name = "amplifyconfiguration.json"; path = "/Users/Theclout/Desktop/Event-Planner/amplifyconfiguration.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FC1E481B4F68402CBBBDD200 /* amplify */ = {isa = PBXFileReference; name = "amplify"; path = "/Users/Theclout/Desktop/Event-Planner/amplify"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D3B1FE7723B41FA100B1F1A7 /* AWSPluginsCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSPluginsCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B1FE7923B4202F00B1F1A7 /* AmplifyPlugins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AmplifyPlugins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC1E481B4F68402CBBBDD200 /* amplify */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = amplify; path = "/Users/Theclout/Desktop/Event-Planner/amplify"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +113,14 @@
 				CD1FAC0E734E3483EBF8091C /* Pods-Event-PlannerTests.debug.xcconfig */,
 				001C447C148E24AB5F5A28CB /* Pods-Event-PlannerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		BAE136FED3D0A47B3D496059 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3B1FE7923B4202F00B1F1A7 /* AmplifyPlugins.framework */,
+				D3B1FE7723B41FA100B1F1A7 /* AWSPluginsCore.framework */,
 				0B83CA69F239F0C2CC3BCF6A /* Pods_Event_Planner.framework */,
 				505357AE4FCF9708A503FB4A /* Pods_Event_Planner_Event_PlannerUITests.framework */,
 				BF7EC7C09D8E731ADAE78FA3 /* Pods_Event_PlannerTests.framework */,
