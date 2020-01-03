@@ -11,6 +11,12 @@
 		A14554780737FBCFE2E8AB06 /* Pods_Event_PlannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7EC7C09D8E731ADAE78FA3 /* Pods_Event_PlannerTests.framework */; };
 		B4425341699B137416C1CA26 /* Pods_Event_Planner_Event_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505357AE4FCF9708A503FB4A /* Pods_Event_Planner_Event_PlannerUITests.framework */; };
 		C8BF8FE51E8CB22C74123A2E /* Pods_Event_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B83CA69F239F0C2CC3BCF6A /* Pods_Event_Planner.framework */; };
+		D33DCDAC23B57E66001F08AE /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330335E23B5796F00351CF6 /* CreateEvent.swift */; };
+		D33DCDAD23B57E6A001F08AE /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330335F23B5796F00351CF6 /* AmplifyModels.swift */; };
+		D33DCDAE23B57E6D001F08AE /* CreateEvent+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330336023B5796F00351CF6 /* CreateEvent+Schema.swift */; };
+		D3962F2D23B54E1E0017A3D0 /* Amplify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3962F2C23B54E1E0017A3D0 /* Amplify.framework */; };
+		D3962F2F23B54E240017A3D0 /* AmplifyPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3962F2E23B54E240017A3D0 /* AmplifyPlugins.framework */; };
+		D3962F3123B54E810017A3D0 /* AWSPluginsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3962F3023B54E810017A3D0 /* AWSPluginsCore.framework */; };
 		D39E5B5D239A083900C5283C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B5C239A083900C5283C /* AppDelegate.swift */; };
 		D39E5B5F239A083900C5283C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B5E239A083900C5283C /* SceneDelegate.swift */; };
 		D39E5B61239A083900C5283C /* CreateEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B60239A083900C5283C /* CreateEventController.swift */; };
@@ -54,6 +60,12 @@
 		BF7EC7C09D8E731ADAE78FA3 /* Pods_Event_PlannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_PlannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1FAC0E734E3483EBF8091C /* Pods-Event-PlannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-PlannerTests.debug.xcconfig"; path = "Target Support Files/Pods-Event-PlannerTests/Pods-Event-PlannerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C4DEF7488AC32F2A75F2D2 /* Pods-Event-Planner-Event-PlannerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-Planner-Event-PlannerUITests.release.xcconfig"; path = "Target Support Files/Pods-Event-Planner-Event-PlannerUITests/Pods-Event-Planner-Event-PlannerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D330335E23B5796F00351CF6 /* CreateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
+		D330335F23B5796F00351CF6 /* AmplifyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
+		D330336023B5796F00351CF6 /* CreateEvent+Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateEvent+Schema.swift"; sourceTree = "<group>"; };
+		D3962F2C23B54E1E0017A3D0 /* Amplify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Amplify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3962F2E23B54E240017A3D0 /* AmplifyPlugins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AmplifyPlugins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3962F3023B54E810017A3D0 /* AWSPluginsCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSPluginsCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39E5B59239A083900C5283C /* Event-Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Event-Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39E5B5C239A083900C5283C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D39E5B5E239A083900C5283C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3962F3123B54E810017A3D0 /* AWSPluginsCore.framework in Frameworks */,
+				D3962F2F23B54E240017A3D0 /* AmplifyPlugins.framework in Frameworks */,
+				D3962F2D23B54E1E0017A3D0 /* Amplify.framework in Frameworks */,
 				C8BF8FE51E8CB22C74123A2E /* Pods_Event_Planner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +134,9 @@
 		BAE136FED3D0A47B3D496059 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3962F3023B54E810017A3D0 /* AWSPluginsCore.framework */,
+				D3962F2E23B54E240017A3D0 /* AmplifyPlugins.framework */,
+				D3962F2C23B54E1E0017A3D0 /* Amplify.framework */,
 				D3B1FE7923B4202F00B1F1A7 /* AmplifyPlugins.framework */,
 				D3B1FE7723B41FA100B1F1A7 /* AWSPluginsCore.framework */,
 				0B83CA69F239F0C2CC3BCF6A /* Pods_Event_Planner.framework */,
@@ -127,6 +145,14 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		D330335D23B5796F00351CF6 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = models;
+			path = amplify/generated/models;
+			sourceTree = SOURCE_ROOT;
 		};
 		D39E5B50239A083900C5283C = {
 			isa = PBXGroup;
@@ -163,6 +189,10 @@
 				D39E5B62239A083900C5283C /* SecondViewController.swift */,
 				D39E5B64239A083900C5283C /* Main.storyboard */,
 				D39E5B6A239A083B00C5283C /* Assets.xcassets */,
+				D330335E23B5796F00351CF6 /* CreateEvent.swift */,
+				D330335F23B5796F00351CF6 /* AmplifyModels.swift */,
+				D330336023B5796F00351CF6 /* CreateEvent+Schema.swift */,
+				D330335D23B5796F00351CF6 /* models */,
 				D39E5B6C239A083B00C5283C /* LaunchScreen.storyboard */,
 				D39E5B6F239A083B00C5283C /* Info.plist */,
 				D39E5B67239A083900C5283C /* Event_Planner.xcdatamodeld */,
@@ -431,9 +461,12 @@
 			files = (
 				D39E5B69239A083900C5283C /* Event_Planner.xcdatamodeld in Sources */,
 				D39E5B63239A083900C5283C /* SecondViewController.swift in Sources */,
+				D33DCDAC23B57E66001F08AE /* CreateEvent.swift in Sources */,
 				D39E5B61239A083900C5283C /* CreateEventController.swift in Sources */,
 				D39E5B5D239A083900C5283C /* AppDelegate.swift in Sources */,
+				D33DCDAE23B57E6D001F08AE /* CreateEvent+Schema.swift in Sources */,
 				D39E5B5F239A083900C5283C /* SceneDelegate.swift in Sources */,
+				D33DCDAD23B57E6A001F08AE /* AmplifyModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

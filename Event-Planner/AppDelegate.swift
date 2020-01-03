@@ -17,8 +17,82 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+            let apiPlugin = AWSAPIPlugin(modelRegistration: AmplifyModels())
+        do {
+            try Amplify.add(plugin: apiPlugin)
+            try Amplify.configure()
+            print("Amplify initialized")
+        } catch {
+            print("Failed to configure Amplify \(error)")
+        }
         return true
+    }
+    
+    func apiMutate() {
+        let createEvent = CreateEvent(from: "createEvent")
+        Amplify.API.mutate(of: createEvent, type: .create) { (event) in
+            switch event {
+            case .completed(let result):
+                switch result {
+                case .success(let createEvent):
+                    print("API Mutate successful, created createEvent: \(createEvent)")
+                case .failure(let error):
+                    print("Completed with error: \(error.errorDescription)")
+                }
+            case .failed(let error):
+                print("Failed with error \(error.errorDescription)")
+            default:
+                print("Unexpected event")
+            }
+        }
+    }
+    
+    func apiQuery(id: String) {
+        Amplify.API.query(from: CreateEvent.self, byId: id) { (event) in
+            switch event {
+            case .completed(let result):
+                switch result {
+                case .success(let createEvent):
+                    guard let createEvent = createEvent else {
+                        print("API Query completed but missing createEvent")
+                        return
+                    }
+                    print("API Query successful, got createEvent: \(createEvent)")
+                case .failure(let error):
+                    print("Completed with error: \(error.errorDescription)")
+                }
+            case .failed(let error):
+                print("Failed with error \(error.errorDescription)")
+            default:
+                print("Unexpected event")
+            }
+        }
+    }
+    
+    func createSubscription() {
+        let subscriptionOperation = Amplify.API.subscribe(from: CreateEvent.self, type: .onCreate) { (event) in
+            switch event {
+            case .inProcess(let subscriptionEvent):
+                switch subscriptionEvent {
+                case .connection(let subscriptionConnectionState):
+                    print("Subsription connect state is \(subscriptionConnectionState)")
+                case .data(let result):
+                    switch result {
+                    case .success(let todo):
+                        print("Successfully got createEvent from subscription: \(todo)")
+                    case .failure(let error):
+                        print("Got failed result with \(error.errorDescription)")
+                    }
+                }
+            case .completed:
+                print("Subscription has been closed")
+            case .failed(let error):
+                print("Got failed result with \(error.errorDescription)")
+            default:
+                print("Should never happen")
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle

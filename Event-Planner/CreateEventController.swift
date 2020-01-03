@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Amplify
+import AmplifyPlugins
 
 class CreateEventController: UIViewController {
     
@@ -21,7 +23,10 @@ class CreateEventController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        
+        
     }
 
 
