@@ -12,6 +12,12 @@ class NewEventTableViewController: UITableViewController {
     
     
     @IBOutlet weak var eventName: UITextField!
+    @IBOutlet weak var eventDescription: UITextView!
+    @IBOutlet weak var eventDate: UIDatePicker!
+    @IBOutlet weak var eventStartTime: UIDatePicker!
+    @IBOutlet weak var eventEndTime: UIDatePicker!
+    @IBOutlet weak var eventVenue: UITextField!
+    @IBOutlet weak var eventAddress: UITextField!
     
     
     
@@ -39,7 +45,7 @@ class NewEventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 7
+        return 8
     }
 
     /*
