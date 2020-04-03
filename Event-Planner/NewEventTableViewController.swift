@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NewEventTableViewController: UITableViewController {
     
@@ -19,7 +20,44 @@ class NewEventTableViewController: UITableViewController {
     @IBOutlet weak var eventVenue: UITextField!
     @IBOutlet weak var eventAddress: UITextField!
     
+    var event: [NSManagedObject] = []
     
+    
+    @IBAction func createEventBtn(_ sender: Any) {
+        addEvent()
+    }
+    
+    func addEvent(){
+        
+        let eventData = Event(eventName: eventName.text!, eventDescription: eventDescription.text!, eventDate: String(eventDate.hashValue), eventStartTime: String(eventStartTime.hashValue) , eventEndTime: String(eventEndTime.hashValue) , eventVenue: eventVenue.text!, eventAddress: eventAddress.text!)
+        
+        let eventViewModel = EventViewModel(event: eventData)
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let eventEntity = NSEntityDescription.entity(forEntityName: "EventInfo", in: managedContext)!
+        
+        let event = NSManagedObject(entity: eventEntity, insertInto: managedContext)
+        
+        event.setValue(eventViewModel.eventName, forKey: "eventName")
+        event.setValue(eventViewModel.eventDescription, forKey: "eventDescription")
+        event.setValue(eventViewModel.eventDate, forKey: "eventDate")
+        event.setValue(eventViewModel.eventStartTime, forKey: "eventStartTime")
+        event.setValue(eventViewModel.eventEndTime, forKey: "eventEndTime")
+        event.setValue(eventViewModel.eventVenue, forKey: "eventVenue")
+        event.setValue(eventViewModel.eventAddress, forKey: "eventAddress")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError{
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        
+        
+    }
     
     
     
