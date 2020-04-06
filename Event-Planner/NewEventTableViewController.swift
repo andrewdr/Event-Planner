@@ -55,8 +55,6 @@ class NewEventTableViewController: UITableViewController {
             print("Could not save. \(error), \(error.userInfo)")
         }
         
-        
-        
     }
     
     
