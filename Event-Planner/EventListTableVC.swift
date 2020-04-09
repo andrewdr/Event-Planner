@@ -20,14 +20,9 @@ class EventCell: UITableViewCell{
 class EventListTableVC: UITableViewController {
     
 
-    
     @IBOutlet var eventListTableView: UITableView!
     
-    var eventViewModel = [EventViewModel]()
-    
-    var eventInfo: [NSManagedObject] = [EventInfo]()
-    
-    
+    var event: [NSManagedObject] = []
     
 
     override func viewDidLoad() {
@@ -35,8 +30,14 @@ class EventListTableVC: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        fetchEventData()
 
-       fetchEventData()
+        eventListTableView.dataSource = self
+        eventListTableView.delegate = self
+        eventListTableView.reloadData()
+        
+//        self.tableView.register(EventCell.self, forCellReuseIdentifier: "eventCell")
     }
 
     // MARK: - Table view data source
@@ -48,14 +49,14 @@ class EventListTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return eventInfo.count
+        return event.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCell
         
-        let eventData = eventInfo[indexPath.row]
+        let eventData = event[indexPath.row]
         
         cell.eventCellName.text = eventData.value(forKey: "eventName") as? String
         cell.eventCellDate.text = eventData.value(forKey: "eventDate") as? String
@@ -71,24 +72,27 @@ class EventListTableVC: UITableViewController {
         guard  let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:"EventInfo")
         
-        fetchRequest.fetchLimit = 3
-        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "eventName", ascending: false)]
-        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "eventDate", ascending: false)]
-        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "eventStartTime", ascending: false)]
-        
+        appDelegate.saveContext()
+
         do {
+            
             let result = try managedContext.fetch(fetchRequest)
-            for data in result as! [NSManagedObject]{
+            
+            event = (result as? [NSManagedObject])!
+            
+            for data in event {
                 print(data.value(forKey: "eventName") as! String)
                 print(data.value(forKey: "eventDate") as! String)
                 print(data.value(forKey: "eventStartTime") as! String)
             }
-        } catch {
             
-            print("Fetch Request Failed")
+            
+            
+        } catch let error as NSError{
+            
+            print("Fetch Request Failed \(error)")
             
         }
         

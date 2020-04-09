@@ -36,31 +36,29 @@ class NewEventTableViewController: UITableViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        
         let eventEntity = NSEntityDescription.entity(forEntityName: "EventInfo", in: managedContext)!
+        let events = NSManagedObject(entity: eventEntity, insertInto: managedContext)
         
-        let event = NSManagedObject(entity: eventEntity, insertInto: managedContext)
+        events.setValue(eventViewModel.eventName, forKey: "eventName")
+        events.setValue(eventViewModel.eventDescription, forKey: "eventDescription")
+        events.setValue(eventViewModel.eventDate, forKey: "eventDate")
+        events.setValue(eventViewModel.eventStartTime, forKey: "eventStartTime")
+        events.setValue(eventViewModel.eventEndTime, forKey: "eventEndTime")
+        events.setValue(eventViewModel.eventVenue, forKey: "eventVenue")
+        events.setValue(eventViewModel.eventAddress, forKey: "eventAddress")
         
-        event.setValue(eventViewModel.eventName, forKey: "eventName")
-        event.setValue(eventViewModel.eventDescription, forKey: "eventDescription")
-        event.setValue(eventViewModel.eventDate, forKey: "eventDate")
-        event.setValue(eventViewModel.eventStartTime, forKey: "eventStartTime")
-        event.setValue(eventViewModel.eventEndTime, forKey: "eventEndTime")
-        event.setValue(eventViewModel.eventVenue, forKey: "eventVenue")
-        event.setValue(eventViewModel.eventAddress, forKey: "eventAddress")
+        appDelegate.saveContext()
         
         do {
             try managedContext.save()
+            
+            event.append(events)
+            
         } catch let error as NSError{
             print("Could not save. \(error), \(error.userInfo)")
         }
         
     }
-    
-    
-    
-    
-    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +68,10 @@ class NewEventTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        
     }
 
     // MARK: - Table view data source
