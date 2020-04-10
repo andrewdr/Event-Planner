@@ -17,10 +17,11 @@ class EventCell: UITableViewCell{
     
 }
 
-class EventListTableVC: UITableViewController {
+class EventListTableVC: UITableViewController{
     
 
     @IBOutlet var eventListTableView: UITableView!
+
     
     var event: [NSManagedObject] = []
     
@@ -31,13 +32,22 @@ class EventListTableVC: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
-        fetchEventData()
-
         eventListTableView.dataSource = self
         eventListTableView.delegate = self
         eventListTableView.reloadData()
+        fetchEventData()
         
 //        self.tableView.register(EventCell.self, forCellReuseIdentifier: "eventCell")
+        
+//        eventListTableView.register(UINib.init(data: EventCell.self, bundle: nil), forCellReuseIdentifier: "eventCell")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//             fetchEventData()
+        
     }
 
     // MARK: - Table view data source
@@ -49,14 +59,18 @@ class EventListTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+         print(event.count)
+        
         return event.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCell
-        
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCell
+    
         let eventData = event[indexPath.row]
+        
+        print(eventData)
         
         cell.eventCellName.text = eventData.value(forKey: "eventName") as? String
         cell.eventCellDate.text = eventData.value(forKey: "eventDate") as? String
@@ -78,22 +92,24 @@ class EventListTableVC: UITableViewController {
 
         do {
             
-            let result = try managedContext.fetch(fetchRequest)
-            
-            event = (result as? [NSManagedObject])!
-            
-            for data in event {
-                print(data.value(forKey: "eventName") as! String)
-                print(data.value(forKey: "eventDate") as! String)
-                print(data.value(forKey: "eventStartTime") as! String)
-            }
-            
-            
-            
+        let result = try managedContext.fetch(fetchRequest)
+
+        event = (result as? [NSManagedObject])!
         } catch let error as NSError{
             
             print("Fetch Request Failed \(error)")
             
+        }
+        
+        for data in event {
+            print(data.value(forKey: "eventName") as! String)
+//            print(data.value(forKey: "eventDate") as! String)
+//            print(data.value(forKey: "eventDescription") as! String)
+//            print(data.value(forKey: "eventStartTime") as! String)
+//            print(data.value(forKey: "eventEndTime") as! String)
+//            print(data.value(forKey: "eventVenue") as! String)
+//            print(data.value(forKey: "eventAddress") as! String)
+//
         }
         
     }

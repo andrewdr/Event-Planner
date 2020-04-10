@@ -280,35 +280,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="90" id="kCF-G0-S4X" customClass="EventCell" customModule="Event_Planner" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="90" id="kCF-G0-S4X" customClass="EventCell" customModule="Event_Planner">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kCF-G0-S4X" id="J5x-sN-R34">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTv-Nw-YNK">
-                                            <rect key="frame" x="20" y="11" width="374" height="33.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTv-Nw-YNK">
+                                            <rect key="frame" x="20" y="11" width="374" height="33"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-6P-xex">
-                                            <rect key="frame" x="20" y="58" width="84" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-6P-xex">
+                                            <rect key="frame" x="20" y="52" width="84" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9E-F5-i7N">
-                                            <rect key="frame" x="112" y="58" width="128" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9E-F5-i7N">
+                                            <rect key="frame" x="112" y="52" width="128" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aTv-Nw-YNK" firstAttribute="top" secondItem="J5x-sN-R34" secondAttribute="topMargin" id="37b-Is-WXH"/>
+                                        <constraint firstItem="cfv-6P-xex" firstAttribute="leading" secondItem="J5x-sN-R34" secondAttribute="leadingMargin" id="9XP-JV-7ZB"/>
+                                        <constraint firstItem="aTv-Nw-YNK" firstAttribute="leading" secondItem="J5x-sN-R34" secondAttribute="leadingMargin" id="9aw-ll-exV"/>
+                                        <constraint firstItem="n9E-F5-i7N" firstAttribute="leading" secondItem="cfv-6P-xex" secondAttribute="trailing" constant="8" id="AVx-yp-l7C"/>
+                                        <constraint firstItem="cfv-6P-xex" firstAttribute="top" secondItem="aTv-Nw-YNK" secondAttribute="bottom" constant="8" id="FOq-wF-0yi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cfv-6P-xex" secondAttribute="bottom" constant="6" id="HzM-ev-JS2"/>
+                                        <constraint firstItem="n9E-F5-i7N" firstAttribute="top" secondItem="aTv-Nw-YNK" secondAttribute="bottom" constant="8" id="Xgf-dU-h7X"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="n9E-F5-i7N" secondAttribute="bottom" constant="6" id="YOb-L2-Njn"/>
+                                        <constraint firstItem="aTv-Nw-YNK" firstAttribute="trailing" secondItem="J5x-sN-R34" secondAttribute="trailingMargin" id="sk7-SI-UBe"/>
+                                        <constraint firstItem="n9E-F5-i7N" firstAttribute="leading" secondItem="cfv-6P-xex" secondAttribute="trailing" constant="8" id="vZD-b6-2xS"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eventCellDate" destination="cfv-6P-xex" id="CL9-gP-nRq"/>
