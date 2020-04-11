@@ -29,7 +29,19 @@ class NewEventTableViewController: UITableViewController {
     
     func addEvent(){
         
-        let eventData = Event(eventName: eventName.text!, eventDescription: eventDescription.text!, eventDate: String(eventDate.hashValue), eventStartTime: String(eventStartTime.hashValue) , eventEndTime: String(eventEndTime.hashValue) , eventVenue: eventVenue.text!, eventAddress: eventAddress.text!)
+        eventDate?.datePickerMode = .date
+        eventStartTime?.datePickerMode = .time
+        eventEndTime?.datePickerMode = .time
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.timeStyle = .short
+        
+        let newDate = dateFormatter.string(from: eventDate.date)
+        let startTime = dateFormatter.string(from: eventStartTime.date)
+        let endTime = dateFormatter.string(from: eventEndTime.date)
+        
+        let eventData = Event(eventName: eventName.text!, eventDescription: eventDescription.text!, eventDate: newDate , eventStartTime: startTime, eventEndTime: endTime, eventVenue: eventVenue.text!, eventAddress: eventAddress.text!)
         
         let eventViewModel = EventViewModel(event: eventData)
         
