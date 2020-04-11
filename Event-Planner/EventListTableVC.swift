@@ -79,6 +79,26 @@ class EventListTableVC: UITableViewController{
         return cell
     }
     
+    //    Mark: - Delete Core Data (Delete Event)
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+          guard  let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        
+           let managedContext = appDelegate.persistentContainer.viewContext
+        
+        if editingStyle == . delete {
+            let eventData = event[indexPath.row]
+            
+            managedContext.delete(eventData)
+            event.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+            appDelegate.saveContext()
+        }
+    }
+    
     //    Mark: - Fetch Core Data
     
     func fetchEventData(){
