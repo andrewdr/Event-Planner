@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D31E356F2443F0BF001944EC /* EventDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E356E2443F0BF001944EC /* EventDetailTableVC.swift */; };
 		D33F217023F9DFD700068FF0 /* NewEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F216E23F9DFD700068FF0 /* NewEventTableViewController.swift */; };
 		D33F217123F9DFD700068FF0 /* NewEventTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33F216F23F9DFD700068FF0 /* NewEventTableViewController.xib */; };
 		D343FBCD243AE14600C17B81 /* EventListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343FBCC243AE14600C17B81 /* EventListTableVC.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D31E356E2443F0BF001944EC /* EventDetailTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableVC.swift; sourceTree = "<group>"; };
 		D33F216E23F9DFD700068FF0 /* NewEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventTableViewController.swift; sourceTree = "<group>"; };
 		D33F216F23F9DFD700068FF0 /* NewEventTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewEventTableViewController.xib; sourceTree = "<group>"; };
 		D343FBCC243AE14600C17B81 /* EventListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableVC.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				D39E5B62239A083900C5283C /* SecondViewController.swift */,
 				D39E5B64239A083900C5283C /* Main.storyboard */,
 				D343FBCC243AE14600C17B81 /* EventListTableVC.swift */,
+				D31E356E2443F0BF001944EC /* EventDetailTableVC.swift */,
 				D396548823FB8B8E005DBA6D /* EventModel.swift */,
 				D396548A23FB8EEF005DBA6D /* EventViewModel.swift */,
 				D33F216E23F9DFD700068FF0 /* NewEventTableViewController.swift */,
@@ -288,6 +291,7 @@
 				D39E5B5D239A083900C5283C /* AppDelegate.swift in Sources */,
 				D396548923FB8B8E005DBA6D /* EventModel.swift in Sources */,
 				D396548B23FB8EEF005DBA6D /* EventViewModel.swift in Sources */,
+				D31E356F2443F0BF001944EC /* EventDetailTableVC.swift in Sources */,
 				D39E5B5F239A083900C5283C /* SceneDelegate.swift in Sources */,
 				D33F217023F9DFD700068FF0 /* NewEventTableViewController.swift in Sources */,
 			);

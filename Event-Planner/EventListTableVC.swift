@@ -42,13 +42,6 @@ class EventListTableVC: UITableViewController{
 //        eventListTableView.register(UINib.init(data: EventCell.self, bundle: nil), forCellReuseIdentifier: "eventCell")
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-//             fetchEventData()
-        
-    }
 
     // MARK: - Table view data source
 
@@ -134,6 +127,26 @@ class EventListTableVC: UITableViewController{
         
     }
     
+    // MARK: - Segue To Event Detail View
+    
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           // Get the new view controller using segue.destination.
+           // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "viewEventDetails"{
+            let destinationVC = segue.destination as? EventDetailTableVC
+            
+            if let indexPath = eventListTableView?.indexPath(for: sender as! UITableViewCell) {
+                
+                let eventData = event[indexPath.row]
+                
+                destinationVC?.eventDetailData = (eventData.value(forKey: "eventName") as? String)!
+                
+                }
+            
+            }
+       }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -170,14 +183,7 @@ class EventListTableVC: UITableViewController{
     }
     */
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

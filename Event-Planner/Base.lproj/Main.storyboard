@@ -323,6 +323,7 @@
                                     <outlet property="eventCellDate" destination="cfv-6P-xex" id="CL9-gP-nRq"/>
                                     <outlet property="eventCellName" destination="aTv-Nw-YNK" id="AJQ-hl-yvZ"/>
                                     <outlet property="eventCellStartTime" destination="n9E-F5-i7N" id="O2R-ia-pjg"/>
+                                    <segue destination="nZe-E4-PXa" kind="showDetail" identifier="viewEventDetails" id="ViL-B4-1vv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -340,6 +341,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxK-TF-Gf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1481" y="360"/>
+        </scene>
+        <!--Event Detail TableVC-->
+        <scene sceneID="3Mj-MJ-ktt">
+            <objects>
+                <tableViewController id="nZe-E4-PXa" customClass="EventDetailTableVC" customModule="Event_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nsU-FU-gwN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="6ut-bC-6o3">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8Z3-wQ-kuo">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="63.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Z3-wQ-kuo" id="ZFc-ro-mts">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjA-XV-ynL">
+                                                    <rect key="frame" x="118.5" y="11" width="177" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="41" id="uf1-l1-8yB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MjA-XV-ynL" firstAttribute="top" secondItem="ZFc-ro-mts" secondAttribute="topMargin" id="9Mg-86-SJx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MjA-XV-ynL" secondAttribute="bottom" constant="3.5" id="9ll-LF-0T4"/>
+                                                <constraint firstItem="MjA-XV-ynL" firstAttribute="centerX" secondItem="ZFc-ro-mts" secondAttribute="centerX" id="oza-Ci-7Qh"/>
+                                                <constraint firstItem="MjA-XV-ynL" firstAttribute="centerY" secondItem="ZFc-ro-mts" secondAttribute="centerY" id="pjj-jp-I6J"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="nZe-E4-PXa" id="W1N-hA-CNW"/>
+                            <outlet property="delegate" destination="nZe-E4-PXa" id="jez-Kn-oSs"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="eventName" destination="MjA-XV-ynL" id="5Qh-cK-uyt"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTa-PO-nFN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2209" y="360"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
