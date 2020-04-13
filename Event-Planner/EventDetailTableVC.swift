@@ -11,14 +11,34 @@ import UIKit
 class EventDetailTableVC: UITableViewController {
     
     
-    var eventDetailData = String()
+    var eventNameData = String()
+    var eventDateData = String()
+    var eventStartTimeData = String()
+    var eventEndTimeData = String()
+    var eventDescriptionData = String()
+    var eventVenueData = String()
+    var eventAddressData = String()
     
     @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventStartTime: UILabel!
+    @IBOutlet weak var eventEndTime: UILabel!
+    @IBOutlet weak var eventDescription: UITextView!
+    @IBOutlet weak var eventVenue: UILabel!
+    @IBOutlet weak var eventAddress: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        eventName.text = eventDetailData
+        eventName.text = eventNameData
+        eventDate.text = eventDateData
+        eventStartTime.text = "\(eventStartTimeData) " + " - "
+        eventEndTime.text = eventEndTimeData
+        eventDescription.text = eventDescriptionData
+        eventVenue.text = eventVenueData
+        eventAddress.text = eventAddressData
     }
 
     // MARK: - Table view data source
@@ -30,7 +50,7 @@ class EventDetailTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 6
     }
 
     /*

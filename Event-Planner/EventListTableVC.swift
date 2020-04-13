@@ -37,10 +37,6 @@ class EventListTableVC: UITableViewController{
         eventListTableView.reloadData()
         fetchEventData()
         
-//        self.tableView.register(EventCell.self, forCellReuseIdentifier: "eventCell")
-        
-//        eventListTableView.register(UINib.init(data: EventCell.self, bundle: nil), forCellReuseIdentifier: "eventCell")
-        
     }
 
     // MARK: - Table view data source
@@ -52,7 +48,7 @@ class EventListTableVC: UITableViewController{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-         print(event.count)
+//         print(event.count)
         
         return event.count
     }
@@ -63,7 +59,7 @@ class EventListTableVC: UITableViewController{
     
         let eventData = event[indexPath.row]
         
-        print(eventData)
+//        print(eventData)
         
         cell.eventCellName.text = eventData.value(forKey: "eventName") as? String
         cell.eventCellDate.text = eventData.value(forKey: "eventDate") as? String
@@ -140,7 +136,15 @@ class EventListTableVC: UITableViewController{
                 
                 let eventData = event[indexPath.row]
                 
-                destinationVC?.eventDetailData = (eventData.value(forKey: "eventName") as? String)!
+                print(eventData)
+                
+                destinationVC?.eventNameData = (eventData.value(forKey: "eventName") as? String)!
+                destinationVC?.eventDateData = (eventData.value(forKey: "eventDate") as? String)!
+                destinationVC?.eventStartTimeData = (eventData.value(forKey: "eventStartTime") as? String)!
+                destinationVC?.eventEndTimeData = (eventData.value(forKey: "eventEndTime") as? String)!
+                destinationVC?.eventDescriptionData = (eventData.value(forKey: "eventDescription") as? String)!
+                destinationVC?.eventVenueData = (eventData.value(forKey: "eventVenue") as? String)!
+                destinationVC?.eventAddressData = (eventData.value(forKey: "eventAddress") as? String)!
                 
                 }
             
