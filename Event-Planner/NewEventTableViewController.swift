@@ -18,7 +18,8 @@ class NewEventTableViewController: UITableViewController {
     @IBOutlet weak var eventStartTime: UIDatePicker!
     @IBOutlet weak var eventEndTime: UIDatePicker!
     @IBOutlet weak var eventVenue: UITextField!
-    @IBOutlet weak var eventAddress: UITextField!
+    @IBOutlet weak var eventAddress: UITextView!
+    
     
     var event: [NSManagedObject] = []
     

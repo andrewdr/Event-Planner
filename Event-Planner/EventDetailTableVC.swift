@@ -25,7 +25,8 @@ class EventDetailTableVC: UITableViewController {
     @IBOutlet weak var eventEndTime: UILabel!
     @IBOutlet weak var eventDescription: UITextView!
     @IBOutlet weak var eventVenue: UILabel!
-    @IBOutlet weak var eventAddress: UILabel!
+    @IBOutlet weak var eventAddress: UITextView!
+    
     
     
     
