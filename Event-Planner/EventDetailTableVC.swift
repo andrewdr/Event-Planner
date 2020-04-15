@@ -10,6 +10,8 @@ import UIKit
 
 class EventDetailTableVC: UITableViewController {
     
+    @IBOutlet var eventDetailTableView: UITableView!
+    
     
     var eventNameData = String()
     var eventDateData = String()
@@ -40,6 +42,9 @@ class EventDetailTableVC: UITableViewController {
         eventDescription.text = eventDescriptionData
         eventVenue.text = eventVenueData
         eventAddress.text = eventAddressData
+        
+        eventDetailTableView.reloadData()
+        eventDetailTableView.tableFooterView = UIView()
     }
 
     // MARK: - Table view data source

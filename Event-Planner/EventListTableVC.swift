@@ -34,8 +34,8 @@ class EventListTableVC: UITableViewController{
         
         eventListTableView.dataSource = self
         eventListTableView.delegate = self
-        eventListTableView.reloadData()
         fetchEventData()
+        eventListTableView.reloadData()
         
     }
 

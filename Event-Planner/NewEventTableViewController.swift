@@ -20,6 +20,21 @@ class NewEventTableViewController: UITableViewController {
     @IBOutlet weak var eventVenue: UITextField!
     @IBOutlet weak var eventAddress: UITextView!
     
+    var date: String?
+    
+    @IBAction func dateSelected(_ sender: UIDatePicker) {
+    
+        eventDate?.datePickerMode = .date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "MMM d, yyy"
+        
+        date = dateFormatter.string(from: eventDate.date)
+
+    }
+    
+    
     
     var event: [NSManagedObject] = []
     
@@ -30,19 +45,19 @@ class NewEventTableViewController: UITableViewController {
     
     func addEvent(){
         
-        eventDate?.datePickerMode = .date
+        dateSelected(eventDate)
+        
+//        eventDate?.datePickerMode = .date
         eventStartTime?.datePickerMode = .time
         eventEndTime?.datePickerMode = .time
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
         dateFormatter.timeStyle = .short
         
-        let newDate = dateFormatter.string(from: eventDate.date)
         let startTime = dateFormatter.string(from: eventStartTime.date)
         let endTime = dateFormatter.string(from: eventEndTime.date)
         
-        let eventData = Event(eventName: eventName.text!, eventDescription: eventDescription.text!, eventDate: newDate , eventStartTime: startTime, eventEndTime: endTime, eventVenue: eventVenue.text!, eventAddress: eventAddress.text!)
+        let eventData = Event(eventName: eventName.text!, eventDescription: eventDescription.text!, eventDate: date , eventStartTime: startTime, eventEndTime: endTime, eventVenue: eventVenue.text!, eventAddress: eventAddress.text!)
         
         let eventViewModel = EventViewModel(event: eventData)
         
@@ -76,13 +91,15 @@ class NewEventTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+//         Uncomment the following line to preserve selection between presentations
+         self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        resignFirstResponder()
         
         
     }

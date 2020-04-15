@@ -10,7 +10,7 @@
         <scene sceneID="TFE-aZ-NKq">
             <objects>
                 <tableViewController id="xaC-N7-lyQ" customClass="NewEventTableViewController" customModule="Event_Planner" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jRM-mc-L4W">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jRM-mc-L4W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -30,10 +30,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="My Cool Event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlf-g3-Wah">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="My Cool Event" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlf-g3-Wah">
                                                     <rect key="frame" x="126" y="18" width="268" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -92,8 +92,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="cQe-VQ-RNb">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQe-VQ-RNb">
                                                     <rect key="frame" x="20" y="40" width="374" height="90"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="608531391.93302906">
+                                                        <!--2020-04-14 04:29:51 +0000-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="dateSelected:" destination="xaC-N7-lyQ" eventType="valueChanged" id="w75-aA-g81"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -176,10 +182,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Andra's House" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j5n-gK-Q36">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Andra's House" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j5n-gK-Q36">
                                                     <rect key="frame" x="130" y="18" width="264" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -213,7 +219,7 @@
                                                     </constraints>
                                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="street-address"/>
                                                     <dataDetectorType key="dataDetectorTypes" address="YES"/>
                                                 </textView>
                                             </subviews>
@@ -371,7 +377,7 @@
                                                         <constraint firstAttribute="height" constant="41" id="uf1-l1-8yB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -382,6 +388,7 @@
                                                 <constraint firstItem="MjA-XV-ynL" firstAttribute="centerY" secondItem="ZFc-ro-mts" secondAttribute="centerY" id="pjj-jp-I6J"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fle-hd-a6D">
                                         <rect key="frame" x="0.0" y="91.5" width="414" height="63.5"/>
@@ -530,6 +537,7 @@
                         <outlet property="eventAddress" destination="4qO-mE-mg6" id="I7Z-fQ-TKJ"/>
                         <outlet property="eventDate" destination="LST-fD-tou" id="333-1k-MY1"/>
                         <outlet property="eventDescription" destination="BYw-C2-bLW" id="0BM-Ol-mFL"/>
+                        <outlet property="eventDetailTableView" destination="nsU-FU-gwN" id="7v0-GO-06F"/>
                         <outlet property="eventEndTime" destination="AzD-8U-3Us" id="dSu-xM-YVU"/>
                         <outlet property="eventName" destination="MjA-XV-ynL" id="5Qh-cK-uyt"/>
                         <outlet property="eventStartTime" destination="YzJ-wr-AKl" id="ix2-dX-QhP"/>
