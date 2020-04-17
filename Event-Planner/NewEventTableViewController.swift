@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewEventTableViewController: UITableViewController {
+class NewEventTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
     
     
     @IBOutlet weak var eventName: UITextField!
@@ -28,7 +28,7 @@ class NewEventTableViewController: UITableViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        dateFormatter.dateFormat = "MMM d, yyy"
+        dateFormatter.dateFormat = "E, MMM d, yyy"
         
         date = dateFormatter.string(from: eventDate.date)
 
@@ -99,9 +99,10 @@ class NewEventTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        resignFirstResponder()
-        
-        
+        eventName.delegate = self
+        eventDescription.delegate = self
+        eventVenue.delegate = self
+        eventAddress.delegate = self
     }
 
     // MARK: - Table view data source
@@ -115,6 +116,26 @@ class NewEventTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 8
     }
+    
+    // MARK: - Dismiss Keyboards
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        eventName.resignFirstResponder()
+//        eventDescription.resignFirstResponder()
+        eventVenue.resignFirstResponder()
+//        eventAddress.resignFirstResponder()
+        
+        return true;
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        
+        eventDescription.resignFirstResponder()
+        eventAddress.resignFirstResponder()
+        return true
+    }
+    
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -34,9 +34,13 @@ class EventListTableVC: UITableViewController{
         
         eventListTableView.dataSource = self
         eventListTableView.delegate = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchEventData()
         eventListTableView.reloadData()
-        
     }
 
     // MARK: - Table view data source
@@ -62,7 +66,7 @@ class EventListTableVC: UITableViewController{
 //        print(eventData)
         
         cell.eventCellName.text = eventData.value(forKey: "eventName") as? String
-        cell.eventCellDate.text = eventData.value(forKey: "eventDate") as? String
+        cell.eventCellDate.text = ((eventData.value(forKey: "eventDate") as? String)! + " -")
         cell.eventCellStartTime.text = eventData.value(forKey: "eventStartTime") as? String
         
         return cell
