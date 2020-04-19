@@ -34,6 +34,15 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
 
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n"{
+            eventDescription.resignFirstResponder()
+            eventAddress.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     
     
     var event: [NSManagedObject] = []
@@ -46,8 +55,6 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     func addEvent(){
         
         dateSelected(eventDate)
-        
-//        eventDate?.datePickerMode = .date
         eventStartTime?.datePickerMode = .time
         eventEndTime?.datePickerMode = .time
         
