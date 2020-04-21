@@ -85,6 +85,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         appDelegate.saveContext()
         
         showAlert()
+        resetEventInputFields()
         
         do {
             try managedContext.save()
@@ -149,6 +150,17 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         eventDescription.resignFirstResponder()
         eventAddress.resignFirstResponder()
         return true
+    }
+    
+    func resetEventInputFields(){
+        eventName.text = ""
+        eventAddress.text = ""
+        
+//        eventDate.date = Calendar.current
+        
+        
+        eventVenue.text = ""
+        eventAddress.text = ""
     }
     
     
