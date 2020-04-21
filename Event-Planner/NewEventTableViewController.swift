@@ -84,6 +84,8 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         
         appDelegate.saveContext()
         
+        showAlert()
+        
         do {
             try managedContext.save()
             
@@ -94,11 +96,18 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         }
         
     }
+    
+    func showAlert(){
+        let alertController = UIAlertController(title: "Congratulations", message: "Your event has been created", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Done", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//         Uncomment the following line to preserve selection between presentations
          self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
