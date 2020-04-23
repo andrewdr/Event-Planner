@@ -99,11 +99,34 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     
     func showAlert(){
-        let alertController = UIAlertController(title: "Congratulations", message: "Your event has been created", preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction(title: "Done", style: .default))
+        var missingInfo: String = ""
         
-        self.present(alertController, animated: true, completion: nil)
+        if eventName.text == "" || eventDescription.text == "" || eventVenue.text == "" || eventAddress.text == ""{
+            
+            if eventName.text == ""{
+                missingInfo = "EVENT NAME"
+            }else if eventDescription.text == ""{
+                missingInfo = "DESCRIPTION"
+            }else if eventVenue.text == ""{
+                missingInfo = "EVENT VENUE"
+            }else if eventAddress.text == ""{
+                missingInfo = "ADDRESS"
+            }
+
+            let missingInfoAlert = UIAlertController(title: "\(missingInfo) MISSING", message: "Please complete the \(missingInfo) field", preferredStyle: .alert)
+            
+            missingInfoAlert.addAction(UIAlertAction(title: "Return to editing", style: .default))
+            
+            self.present(missingInfoAlert, animated: true, completion: nil)
+            
+        }else{
+            let alertController = UIAlertController(title: "Congratulations", message: "Your event has been created", preferredStyle: .alert)
+                   
+                alertController.addAction(UIAlertAction(title: "Done", style: .default))
+                   
+                self.present(alertController, animated: true, completion: nil)
+        }
         
     }
         
