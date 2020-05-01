@@ -47,9 +47,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     
     
-    
     var event: [NSManagedObject] = []
-    
     
     @IBAction func createEventBtn(_ sender: Any) {
         
@@ -106,6 +104,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         
     }
     
+//  Alert Appears if event information is missing
     func infoMissingAlert(){
         
         var missingInfo: String = ""
@@ -131,6 +130,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         }
     }
     
+//  Alert appears when an event is successfully created
     func eventCreatedAlert(){
         let alertController = UIAlertController(title: "Congratulations", message: "Your event has been created", preferredStyle: .alert)
            
@@ -146,9 +146,6 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
          self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
@@ -156,6 +153,17 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         eventDescription.delegate = self
         eventVenue.delegate = self
         eventAddress.delegate = self
+        
+        eventDescription.layer.borderWidth = 1
+        eventDescription.layer.borderColor = UIColor.darkGray.cgColor
+        eventDescription.layer.cornerRadius = 5
+        eventDescription.layer.opacity = 0.5
+        
+        eventAddress.layer.borderWidth = 1
+        eventAddress.layer.borderColor = UIColor.darkGray.cgColor
+        eventAddress.layer.cornerRadius = 5
+        eventAddress.layer.opacity = 0.5
+        
     }
 
     // MARK: - Table view data source
