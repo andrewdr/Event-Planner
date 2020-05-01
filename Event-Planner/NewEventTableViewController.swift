@@ -19,6 +19,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet weak var eventEndTime: UIDatePicker!
     @IBOutlet weak var eventVenue: UITextField!
     @IBOutlet weak var eventAddress: UITextView!
+    @IBOutlet weak var createEventButtonOutlet: UIButton!
     
     var date: String?
     
@@ -31,6 +32,8 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         dateFormatter.dateFormat = "E, MMM d, yyy"
         
         date = dateFormatter.string(from: eventDate.date)
+        
+        createEventButtonOutlet.backgroundColor = UIColor.systemGreen
 
     }
     
@@ -131,7 +134,11 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     func eventCreatedAlert(){
         let alertController = UIAlertController(title: "Congratulations", message: "Your event has been created", preferredStyle: .alert)
            
-        alertController.addAction(UIAlertAction(title: "Done", style: .default))
+        alertController.addAction(UIAlertAction(title: "Done", style: .default, handler: {(action) -> Void in
+            
+//          turns 'create event' button back to blue
+            self.createEventButtonOutlet.backgroundColor = UIColor.systemBlue
+        }))
            
         self.present(alertController, animated: true, completion: nil)
     }

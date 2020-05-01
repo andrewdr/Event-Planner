@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Create Event-->
         <scene sceneID="TFE-aZ-NKq">
             <objects>
                 <tableViewController id="xaC-N7-lyQ" customClass="NewEventTableViewController" customModule="Event_Planner" customModuleProvider="target" sceneMemberID="viewController">
@@ -257,6 +257,11 @@
                                                     <state key="normal" title="Create Event">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="createEventBtn:" destination="xaC-N7-lyQ" eventType="touchUpInside" id="ZsX-uA-Is8"/>
                                                     </connections>
@@ -276,8 +281,9 @@
                             <outlet property="delegate" destination="xaC-N7-lyQ" id="TYJ-df-vvg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="eOn-b7-ZFw"/>
+                    <navigationItem key="navigationItem" title="Create Event" id="eOn-b7-ZFw"/>
                     <connections>
+                        <outlet property="createEventButtonOutlet" destination="Qo0-hL-j6A" id="AoR-sr-CgB"/>
                         <outlet property="eventAddress" destination="Wgd-cj-mcy" id="dZ8-b9-uAg"/>
                         <outlet property="eventDate" destination="cQe-VQ-RNb" id="e2o-Mn-lgU"/>
                         <outlet property="eventDescription" destination="0eh-Wm-drg" id="rEc-ck-2eH"/>
