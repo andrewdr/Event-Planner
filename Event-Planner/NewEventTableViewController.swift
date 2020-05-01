@@ -49,7 +49,13 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     
     
     @IBAction func createEventBtn(_ sender: Any) {
-        addEvent()
+        
+        if eventName.text == "" || eventDescription.text == "" || eventVenue.text == "" || eventAddress.text == ""{
+            infoMissingAlert()
+        }else{
+            eventCreatedAlert()
+            addEvent()
+        }
     }
     
     func addEvent(){
@@ -84,7 +90,6 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         
         appDelegate.saveContext()
         
-        showAlert()
         resetEventInputFields()
         
         do {
@@ -98,7 +103,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         
     }
     
-    func showAlert(){
+    func infoMissingAlert(){
         
         var missingInfo: String = ""
         
@@ -120,14 +125,15 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
             
             self.present(missingInfoAlert, animated: true, completion: nil)
             
-        }else{
-            let alertController = UIAlertController(title: "Congratulations", message: "Your event has been created", preferredStyle: .alert)
-                   
-                alertController.addAction(UIAlertAction(title: "Done", style: .default))
-                   
-                self.present(alertController, animated: true, completion: nil)
         }
-        
+    }
+    
+    func eventCreatedAlert(){
+        let alertController = UIAlertController(title: "Congratulations", message: "Your event has been created", preferredStyle: .alert)
+           
+        alertController.addAction(UIAlertAction(title: "Done", style: .default))
+           
+        self.present(alertController, animated: true, completion: nil)
     }
         
     override func viewDidLoad() {

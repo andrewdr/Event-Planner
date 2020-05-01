@@ -76,20 +76,30 @@ class EventListTableVC: UITableViewController{
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-          guard  let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        guard  let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         
-           let managedContext = appDelegate.persistentContainer.viewContext
+        let managedContext = appDelegate.persistentContainer.viewContext
         
-        if editingStyle == . delete {
-            let eventData = event[indexPath.row]
+        let confirmationAlert = UIAlertController(title: "Delete Event?", message: "Are you sure you want to delete this event?", preferredStyle: .alert)
+              
+        confirmationAlert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {(action) -> Void in
             
-            managedContext.delete(eventData)
-            event.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if editingStyle == . delete {
+                        
+                let eventData = self.event[indexPath.row]
             
-            
-            appDelegate.saveContext()
-        }
+                    managedContext.delete(eventData)
+                    self.event.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                        
+                    appDelegate.saveContext()
+                }
+            }))
+        
+              confirmationAlert.addAction(UIAlertAction(title: "No", style: .cancel))
+                 
+              self.present(confirmationAlert, animated: true, completion: nil)
+
     }
     
     //    Mark: - Fetch Core Data
@@ -130,8 +140,6 @@ class EventListTableVC: UITableViewController{
     // MARK: - Segue To Event Detail View
     
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           // Get the new view controller using segue.destination.
-           // Pass the selected object to the new view controller.
         
         if segue.identifier == "viewEventDetails"{
             let destinationVC = segue.destination as? EventDetailTableVC
