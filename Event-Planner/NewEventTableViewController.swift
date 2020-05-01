@@ -46,6 +46,15 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         return true
     }
     
+//    Clears placeholder text on 'description' and 'address' fields
+    func textViewDidBeginEditing(_ textView: UITextView) {
+               if textView == eventDescription {
+             eventDescription.text = ""
+         }else if textView == eventAddress{
+             eventAddress.text = ""
+         }
+    }
+    
     
     var event: [NSManagedObject] = []
     
