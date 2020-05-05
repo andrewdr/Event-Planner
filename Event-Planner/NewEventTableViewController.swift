@@ -55,9 +55,9 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
          }
     }
     
-    
     var event: [NSManagedObject] = []
     
+//  creates event
     @IBAction func createEventBtn(_ sender: Any) {
         
         if eventName.text == "" || eventDescription.text == "" || eventVenue.text == "" || eventAddress.text == ""{
@@ -65,9 +65,11 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         }else{
             eventCreatedAlert()
             addEvent()
+            self.tabBarController?.selectedIndex = 0
         }
     }
     
+//    Adds event to core data an eventlisttables
     func addEvent(){
         
         dateSelected(eventDate)
@@ -113,7 +115,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         
     }
     
-//  Alert Appears if event information is missing
+//  This alert appears if event information is missing
     func infoMissingAlert(){
         
         var missingInfo: String = ""
@@ -164,12 +166,12 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         eventAddress.delegate = self
         
         eventDescription.layer.borderWidth = 1
-        eventDescription.layer.borderColor = UIColor.darkGray.cgColor
+        eventDescription.layer.borderColor = UIColor.systemGray.cgColor
         eventDescription.layer.cornerRadius = 5
         eventDescription.layer.opacity = 0.5
         
         eventAddress.layer.borderWidth = 1
-        eventAddress.layer.borderColor = UIColor.darkGray.cgColor
+        eventAddress.layer.borderColor = UIColor.systemGray.cgColor
         eventAddress.layer.cornerRadius = 5
         eventAddress.layer.opacity = 0.5
         

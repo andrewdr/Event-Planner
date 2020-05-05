@@ -625,7 +625,7 @@
         <scene sceneID="D1M-q4-PQq">
             <objects>
                 <navigationController title="createEvent" automaticallyAdjustsScrollViewInsets="NO" id="dGO-O4-heb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create Event" id="Bnh-Sf-FUG"/>
+                    <tabBarItem key="tabBarItem" title="Create Event" image="first" id="Bnh-Sf-FUG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vUE-Fk-RL7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -663,6 +663,7 @@
     <resources>
         <image name="calendarIcon" width="300" height="300"/>
         <image name="clockIcon" width="300" height="300"/>
+        <image name="first" width="30" height="30"/>
         <image name="mapIcon" width="400" height="400"/>
         <image name="mapMarkerIcon" width="74" height="120"/>
         <image name="second" width="30" height="30"/>
