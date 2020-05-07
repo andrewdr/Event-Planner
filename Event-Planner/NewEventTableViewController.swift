@@ -60,9 +60,20 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
 //  creates event
     @IBAction func createEventBtn(_ sender: Any) {
         
+        eventStartTime?.datePickerMode = .time
+        eventEndTime?.datePickerMode = .time
+               
+        let dateFormatter = DateFormatter()
+            dateFormatter.timeStyle = .short
+        
         if eventName.text == "" || eventDescription.text == "" || eventVenue.text == "" || eventAddress.text == ""{
             infoMissingAlert()
-        }else{
+        }else if eventStartTime.date >= eventEndTime.date{
+            print(eventStartTime.date)
+            print(eventEndTime.date)
+            
+            timeConflictAlert()
+        }else {
             eventCreatedAlert()
             addEvent()
             self.tabBarController?.selectedIndex = 0
@@ -139,6 +150,31 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
             self.present(missingInfoAlert, animated: true, completion: nil)
             
         }
+        
+        eventStartTime?.datePickerMode = .time
+        eventEndTime?.datePickerMode = .time
+               
+        let dateFormatter = DateFormatter()
+            dateFormatter.timeStyle = .short
+               
+            if eventStartTime.date <= eventEndTime.date{
+                   
+                let timeConflictAlert = UIAlertController(title: "TIME CONFLICT", message: "Event 'End Time' must be after 'start time'", preferredStyle: .alert)
+                   
+                   timeConflictAlert.addAction(UIAlertAction(title: "Return to editing", style: .default, handler: nil))
+                   
+                   self.present(timeConflictAlert, animated: true, completion: nil)
+               }
+    }
+    
+//  Alert Triggered if Event End Time comes before the start time
+    func timeConflictAlert(){
+            
+            let timeConflictAlert = UIAlertController(title: "TIME CONFLICT", message: "Event 'End Time' must be after 'start time'", preferredStyle: .alert)
+            
+            timeConflictAlert.addAction(UIAlertAction(title: "Return to editing", style: .default, handler: nil))
+            
+            self.present(timeConflictAlert, animated: true, completion: nil)
     }
     
 //  Alert appears when an event is successfully created
