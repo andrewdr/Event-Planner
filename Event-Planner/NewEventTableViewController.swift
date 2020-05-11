@@ -8,8 +8,12 @@
 
 import UIKit
 import CoreData
+import GooglePlaces
 
 class NewEventTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+
+    
+
     
     
     @IBOutlet weak var eventName: UITextField!
@@ -212,6 +216,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         eventAddress.layer.opacity = 0.5
         
     }
+    
 
     // MARK: - Table view data source
 
@@ -229,10 +234,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         eventName.resignFirstResponder()
-//        eventDescription.resignFirstResponder()
         eventVenue.resignFirstResponder()
-//        eventAddress.resignFirstResponder()
-        
         return true;
     }
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		D39E5B6E239A083B00C5283C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39E5B6C239A083B00C5283C /* LaunchScreen.storyboard */; };
 		D39E5B79239A083B00C5283C /* Event_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B78239A083B00C5283C /* Event_PlannerTests.swift */; };
 		D39E5B84239A083B00C5283C /* Event_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B83239A083B00C5283C /* Event_PlannerUITests.swift */; };
+		D3B03F44246501BE004F196D /* addressAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B03F43246501BE004F196D /* addressAutoComplete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D39E5B7F239A083B00C5283C /* Event-PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Event-PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39E5B83239A083B00C5283C /* Event_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_PlannerUITests.swift; sourceTree = "<group>"; };
 		D39E5B85239A083B00C5283C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3B03F43246501BE004F196D /* addressAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressAutoComplete.swift; sourceTree = "<group>"; };
 		DA7EED45F69A073DDD56D375 /* Pods-Event-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-Planner.release.xcconfig"; path = "Target Support Files/Pods-Event-Planner/Pods-Event-Planner.release.xcconfig"; sourceTree = "<group>"; };
 		E429E805D5D9BCE388470A85 /* Pods-Event-Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-Planner.debug.xcconfig"; path = "Target Support Files/Pods-Event-Planner/Pods-Event-Planner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 				D39E5B60239A083900C5283C /* CreateEventController.swift */,
 				D39E5B62239A083900C5283C /* SecondViewController.swift */,
 				D39E5B64239A083900C5283C /* Main.storyboard */,
+				D3B03F43246501BE004F196D /* addressAutoComplete.swift */,
 				D343FBCC243AE14600C17B81 /* EventListTableVC.swift */,
 				D31E356E2443F0BF001944EC /* EventDetailTableVC.swift */,
 				D396548823FB8B8E005DBA6D /* EventModel.swift */,
@@ -173,7 +176,6 @@
 				E429E805D5D9BCE388470A85 /* Pods-Event-Planner.debug.xcconfig */,
 				DA7EED45F69A073DDD56D375 /* Pods-Event-Planner.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -357,6 +359,7 @@
 				D343FBCD243AE14600C17B81 /* EventListTableVC.swift in Sources */,
 				D39E5B63239A083900C5283C /* SecondViewController.swift in Sources */,
 				D39E5B61239A083900C5283C /* CreateEventController.swift in Sources */,
+				D3B03F44246501BE004F196D /* addressAutoComplete.swift in Sources */,
 				D39E5B5D239A083900C5283C /* AppDelegate.swift in Sources */,
 				D396548923FB8B8E005DBA6D /* EventModel.swift in Sources */,
 				D396548B23FB8EEF005DBA6D /* EventViewModel.swift in Sources */,
