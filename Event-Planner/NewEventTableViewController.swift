@@ -12,10 +12,6 @@ import GooglePlaces
 
 class NewEventTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
 
-    
-
-    
-    
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var eventDescription: UITextView!
     @IBOutlet weak var eventDate: UIDatePicker!
@@ -27,6 +23,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     
     var date: String?
     
+//    Date Formatting
     @IBAction func dateSelected(_ sender: UIDatePicker) {
     
         eventDate?.datePickerMode = .date
@@ -41,6 +38,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
 
     }
     
+//    Dismiss Keyboards for texviews
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n"{
             eventDescription.resignFirstResponder()
@@ -54,14 +52,17 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     func textViewDidBeginEditing(_ textView: UITextView) {
                if textView == eventDescription {
              eventDescription.text = ""
+                
          }else if textView == eventAddress{
              eventAddress.text = ""
          }
+        
+        
     }
     
     var event: [NSManagedObject] = []
     
-//  creates event
+//  create event button
     @IBAction func createEventBtn(_ sender: Any) {
         
         eventStartTime?.datePickerMode = .time
@@ -84,7 +85,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         }
     }
     
-//    Adds event to core data an eventlisttables
+//    Creates Event, Adds event to core data an eventlisttables
     func addEvent(){
         
         dateSelected(eventDate)
@@ -216,6 +217,8 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         eventAddress.layer.opacity = 0.5
         
     }
+    
+    
     
 
     // MARK: - Table view data source
