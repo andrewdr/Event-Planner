@@ -50,41 +50,37 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         return true
     }
     
-//    Clears placeholder text on 'description' and 'address' fields
+//    Clears placeholder text on 'description'fields & launches Google Places
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView == eventDescription {
             
             eventDescription.text = ""
                 
-         }else if textView == eventAddress{
-            
-            eventAddress.text = ""
-
-        }
+         }
         
-//        Launch Google Place
-        if textView == eventAddress{
-            
-    //        Show Google Places View
-            let autocompleteController = GMSAutocompleteViewController()
-            autocompleteController.delegate = self
-            present(autocompleteController, animated: true, completion: nil)
-            
-    //        Specify the place data types to return
-            let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue))!
-            autocompleteController.placeFields = fields
+        if textView == eventAddress && eventAddress.text == ""{
+            //        Show Google Places View
+                    let autocompleteController = GMSAutocompleteViewController()
+                    autocompleteController.delegate = self
+                    present(autocompleteController, animated: true, completion: nil)
 
-    //        Specify Filter
-            let filter = GMSAutocompleteFilter()
-            filter.type = .address
-            autocompleteController.autocompleteFilter = filter
-            
-            autocompleteController.primaryTextColor = UIColor.lightGray
-            autocompleteController.primaryTextHighlightColor = UIColor.systemBlue
-            autocompleteController.secondaryTextColor = UIColor.lightGray
+//            //        Specify the place data types to return
+//                    let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue))!
+//                    autocompleteController.placeFields = fields
+//
+//            //        Specify Filter
+//                    let filter = GMSAutocompleteFilter()
+//                    filter.type = .address
+//                    autocompleteController.autocompleteFilter = filter
+
+            //        Google Places View Styling
+                    autocompleteController.primaryTextColor = UIColor.lightGray
+                    autocompleteController.primaryTextHighlightColor = UIColor.systemBlue
+                    autocompleteController.secondaryTextColor = UIColor.lightGray
         }
-            
+                    
     }
+    
     
     var event: [NSManagedObject] = []
     
@@ -273,17 +269,16 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     
     func resetEventInputFields(){
         eventName.text = ""
-        eventAddress.text = ""
         eventVenue.text = ""
-        eventAddress.text = ""
     }
     
 //  MARK: - Google Places Map Functions
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print("Place Name: \(String(describing: place.name))")
-        print("Place ID: \(String(describing: place.placeID))")
+        print("Formatted Address: \(String(describing: place.formattedAddress))")
+        
 
-        eventAddress.text = String(describing:place.name)
+        eventAddress.text = String(describing:place.formattedAddress)
 
         dismiss(animated: true, completion: nil)
     }
@@ -295,6 +290,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
     }
+
     
 
     
