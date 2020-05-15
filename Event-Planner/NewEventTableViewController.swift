@@ -278,7 +278,14 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         print("Formatted Address: \(String(describing: place.formattedAddress))")
         
 
-        eventAddress.text = String(describing:place.formattedAddress)
+//        eventAddress.text = String(describing:place.formattedAddress)
+        
+        var addressString = place.formattedAddress
+        let strRange = (addressString?.index(addressString!.endIndex, offsetBy: -5))!..<addressString!.endIndex
+        
+        addressString?.removeSubrange(strRange)
+        eventAddress.text = String(addressString!)
+
 
         dismiss(animated: true, completion: nil)
     }
