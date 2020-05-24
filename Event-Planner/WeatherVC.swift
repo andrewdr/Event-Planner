@@ -75,9 +75,12 @@ class WeatherVC: NewEventTableViewController {
                        completion?(.failure(error))
                    }
                }
+            
+            
            }
+        
+            task.resume()
            
-           task.resume
        }
 
     override func viewDidLoad() {
