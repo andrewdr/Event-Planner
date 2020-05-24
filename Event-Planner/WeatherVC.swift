@@ -82,31 +82,40 @@ class WeatherVC: NewEventTableViewController {
             task.resume()
            
        }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func fetchWeather(){
         
-        getWeatherData(for: 4684888) {(result) in
+        getWeatherData(for: 4686888){ (result) in
             
             switch result{
                 
-            case.success(let: weather):
+            case .success(let weather):
                 self.currentWeather = [weather]
                 
                 let weatherUpdate = self.currentWeather[0]
                 
                 if let cityName = weatherUpdate.name{
                     
-//                    self.city.text = cityName
+//                    insert city name into app name variable
+                    
+                    print("The city name is \(cityName)")
+                    
                 }
                 
-            case.failure(let error):
+            case .failure(let error):
                 fatalError("Error: \(error.localizedDescription)")
-                
             }
             
         }
+        
+        
+        
+    }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fetchWeather()
 
     }
 
