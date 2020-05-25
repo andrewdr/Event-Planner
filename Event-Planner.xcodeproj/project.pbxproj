@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6C6703A94CADC6BF72CBDF19 /* libPods-Event-Planner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B51FC6B2A9B538C705FF4561 /* libPods-Event-Planner.a */; };
-		D3130775247862A400802BD9 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3130774247862A400802BD9 /* WeatherVC.swift */; };
 		D31E356F2443F0BF001944EC /* EventDetailTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E356E2443F0BF001944EC /* EventDetailTableVC.swift */; };
 		D33F217023F9DFD700068FF0 /* NewEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F216E23F9DFD700068FF0 /* NewEventTableViewController.swift */; };
 		D33F217123F9DFD700068FF0 /* NewEventTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33F216F23F9DFD700068FF0 /* NewEventTableViewController.xib */; };
 		D343FBCD243AE14600C17B81 /* EventListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343FBCC243AE14600C17B81 /* EventListTableVC.swift */; };
 		D34BFBDD24760593004811D6 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34BFBDC24760593004811D6 /* WeatherModel.swift */; };
+		D34C6C31247B568000E65C2C /* EventVC-Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C6C30247B568000E65C2C /* EventVC-Weather.swift */; };
 		D396548923FB8B8E005DBA6D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D396548823FB8B8E005DBA6D /* EventModel.swift */; };
 		D396548B23FB8EEF005DBA6D /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D396548A23FB8EEF005DBA6D /* EventViewModel.swift */; };
 		D39E5B5D239A083900C5283C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39E5B5C239A083900C5283C /* AppDelegate.swift */; };
@@ -47,12 +47,12 @@
 
 /* Begin PBXFileReference section */
 		B51FC6B2A9B538C705FF4561 /* libPods-Event-Planner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Event-Planner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3130774247862A400802BD9 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		D31E356E2443F0BF001944EC /* EventDetailTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableVC.swift; sourceTree = "<group>"; };
 		D33F216E23F9DFD700068FF0 /* NewEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventTableViewController.swift; sourceTree = "<group>"; };
 		D33F216F23F9DFD700068FF0 /* NewEventTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewEventTableViewController.xib; sourceTree = "<group>"; };
 		D343FBCC243AE14600C17B81 /* EventListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableVC.swift; sourceTree = "<group>"; };
 		D34BFBDC24760593004811D6 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		D34C6C30247B568000E65C2C /* EventVC-Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventVC-Weather.swift"; sourceTree = "<group>"; };
 		D396548823FB8B8E005DBA6D /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		D396548A23FB8EEF005DBA6D /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		D39E5B59239A083900C5283C /* Event-Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Event-Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +145,7 @@
 				D396548A23FB8EEF005DBA6D /* EventViewModel.swift */,
 				D33F216E23F9DFD700068FF0 /* NewEventTableViewController.swift */,
 				D34BFBDC24760593004811D6 /* WeatherModel.swift */,
-				D3130774247862A400802BD9 /* WeatherVC.swift */,
+				D34C6C30247B568000E65C2C /* EventVC-Weather.swift */,
 				D33F216F23F9DFD700068FF0 /* NewEventTableViewController.xib */,
 				D39E5B6A239A083B00C5283C /* Assets.xcassets */,
 				D39E5B6C239A083B00C5283C /* LaunchScreen.storyboard */,
@@ -358,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34C6C31247B568000E65C2C /* EventVC-Weather.swift in Sources */,
 				D39E5B69239A083900C5283C /* Event_Planner.xcdatamodeld in Sources */,
 				D343FBCD243AE14600C17B81 /* EventListTableVC.swift in Sources */,
 				D39E5B63239A083900C5283C /* SecondViewController.swift in Sources */,
@@ -365,7 +366,6 @@
 				D39E5B5D239A083900C5283C /* AppDelegate.swift in Sources */,
 				D396548923FB8B8E005DBA6D /* EventModel.swift in Sources */,
 				D396548B23FB8EEF005DBA6D /* EventViewModel.swift in Sources */,
-				D3130775247862A400802BD9 /* WeatherVC.swift in Sources */,
 				D31E356F2443F0BF001944EC /* EventDetailTableVC.swift in Sources */,
 				D39E5B5F239A083900C5283C /* SceneDelegate.swift in Sources */,
 				D33F217023F9DFD700068FF0 /* NewEventTableViewController.swift in Sources */,

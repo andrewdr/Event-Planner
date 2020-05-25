@@ -221,6 +221,7 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         super.viewDidLoad()
          self.clearsSelectionOnViewWillAppear = false
         
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         eventName.delegate = self
@@ -237,6 +238,8 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         eventAddress.layer.borderColor = UIColor.systemGray.cgColor
         eventAddress.layer.cornerRadius = 5
         eventAddress.layer.opacity = 0.5
+        
+        fetchWeather()
         
     }
 
