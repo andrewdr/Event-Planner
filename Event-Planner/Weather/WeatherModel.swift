@@ -31,16 +31,11 @@ struct Weather: Codable {
         let humidity: Int?
     }
     
-    let main: Main
+    let main: Main?
     let dt: Int?
     let id: Int?
     let name: String?
     
-//    init(dt: Int, id: Int, name: String) {
-//        self.dt = dt
-//        self.id = id
-//        self.name = name
-//    }
 }
 
 

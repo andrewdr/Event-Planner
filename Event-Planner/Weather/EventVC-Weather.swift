@@ -66,6 +66,8 @@ import Foundation
                     }catch{
                         
                         completion?(.failure(error))
+                        
+                        print(error as Any)
                     }
                     
                 }else{
@@ -98,11 +100,12 @@ import Foundation
     //                    insert city name into app name variable
                         
                         print("The city name is \(cityName)")
+                    
                         
                     }
                     
                 case .failure(let error):
-                    fatalError("Error: \(error.localizedDescription)")
+                    fatalError("Error: \(error)")
                 }
                 
             }

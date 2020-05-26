@@ -144,9 +144,8 @@
 				D396548823FB8B8E005DBA6D /* EventModel.swift */,
 				D396548A23FB8EEF005DBA6D /* EventViewModel.swift */,
 				D33F216E23F9DFD700068FF0 /* NewEventTableViewController.swift */,
-				D34BFBDC24760593004811D6 /* WeatherModel.swift */,
-				D34C6C30247B568000E65C2C /* EventVC-Weather.swift */,
 				D33F216F23F9DFD700068FF0 /* NewEventTableViewController.xib */,
+				D3EE6505247DD4C200AE8B59 /* Weather */,
 				D39E5B6A239A083B00C5283C /* Assets.xcassets */,
 				D39E5B6C239A083B00C5283C /* LaunchScreen.storyboard */,
 				D39E5B6F239A083B00C5283C /* Info.plist */,
@@ -171,6 +170,15 @@
 				D39E5B85239A083B00C5283C /* Info.plist */,
 			);
 			path = "Event-PlannerUITests";
+			sourceTree = "<group>";
+		};
+		D3EE6505247DD4C200AE8B59 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				D34BFBDC24760593004811D6 /* WeatherModel.swift */,
+				D34C6C30247B568000E65C2C /* EventVC-Weather.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		E9FE459E951DC5C5CA846577 /* Pods */ = {

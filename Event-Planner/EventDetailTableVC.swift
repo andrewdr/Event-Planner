@@ -43,6 +43,8 @@ class EventDetailTableVC: UITableViewController {
         eventVenue.text = eventVenueData
         eventAddress.text = eventAddressData
         
+        fetchWeather()
+        
         eventDetailTableView.reloadData()
         eventDetailTableView.tableFooterView = UIView()
     }

@@ -239,7 +239,6 @@ class NewEventTableViewController: UITableViewController, UITextFieldDelegate, U
         eventAddress.layer.cornerRadius = 5
         eventAddress.layer.opacity = 0.5
         
-        fetchWeather()
         
     }
 
