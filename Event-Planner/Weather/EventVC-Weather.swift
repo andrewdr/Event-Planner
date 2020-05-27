@@ -86,7 +86,7 @@ import Foundation
     
         func fetchWeather(){
             
-            getWeatherData(for: 4686888){ (result) in
+            getWeatherData(for: 4684888){ (result) in
                 
                 switch result{
                     
@@ -105,7 +105,7 @@ import Foundation
                     }
                     
                 case .failure(let error):
-                    fatalError("Error: \(error)")
+                    fatalError("Error: \(error.localizedDescription)")
                 }
                 
             }
