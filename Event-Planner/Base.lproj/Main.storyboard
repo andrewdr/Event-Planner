@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -580,6 +580,40 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="p8R-hy-RFt">
+                                        <rect key="frame" x="0.0" y="532" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p8R-hy-RFt" id="t6C-Z9-N3u">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2zf-cm-Xje">
+                                                    <rect key="frame" x="20" y="11" width="45" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="Rbg-eK-4PV"/>
+                                                        <constraint firstAttribute="width" constant="45" id="wN7-R9-Cix"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Event Weather" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="230-a6-yuf">
+                                                    <rect key="frame" x="73" y="11" width="321" height="78"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="2zf-cm-Xje" secondAttribute="bottom" constant="44" id="Jwd-0E-S6T"/>
+                                                <constraint firstItem="230-a6-yuf" firstAttribute="bottom" secondItem="t6C-Z9-N3u" secondAttribute="bottomMargin" id="afT-tU-Lhk"/>
+                                                <constraint firstItem="230-a6-yuf" firstAttribute="leading" secondItem="2zf-cm-Xje" secondAttribute="trailing" constant="8" id="fVi-9h-FWn"/>
+                                                <constraint firstItem="230-a6-yuf" firstAttribute="leading" secondItem="2zf-cm-Xje" secondAttribute="trailing" constant="8" id="iJn-ux-ZiV"/>
+                                                <constraint firstItem="230-a6-yuf" firstAttribute="trailing" secondItem="t6C-Z9-N3u" secondAttribute="trailingMargin" id="j2Q-58-ejo"/>
+                                                <constraint firstItem="230-a6-yuf" firstAttribute="top" secondItem="t6C-Z9-N3u" secondAttribute="topMargin" id="jGn-Oz-8Tn"/>
+                                                <constraint firstItem="2zf-cm-Xje" firstAttribute="leading" secondItem="t6C-Z9-N3u" secondAttribute="leading" constant="20" id="klt-2Y-kIf"/>
+                                                <constraint firstItem="2zf-cm-Xje" firstAttribute="top" secondItem="t6C-Z9-N3u" secondAttribute="top" constant="11" id="vPj-f3-xiD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -597,6 +631,7 @@
                         <outlet property="eventName" destination="MjA-XV-ynL" id="5Qh-cK-uyt"/>
                         <outlet property="eventStartTime" destination="YzJ-wr-AKl" id="ix2-dX-QhP"/>
                         <outlet property="eventVenue" destination="3qq-K1-wej" id="cDB-WO-9hf"/>
+                        <outlet property="eventWeather" destination="230-a6-yuf" id="usZ-Fa-aTZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTa-PO-nFN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -663,6 +698,7 @@
     <resources>
         <image name="calendarIcon" width="300" height="300"/>
         <image name="clockIcon" width="300" height="300"/>
+        <image name="cloudIcon" width="300" height="300"/>
         <image name="first" width="30" height="30"/>
         <image name="mapIcon" width="400" height="400"/>
         <image name="mapMarkerIcon" width="74" height="120"/>

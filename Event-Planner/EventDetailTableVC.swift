@@ -28,12 +28,54 @@ class EventDetailTableVC: UITableViewController {
     @IBOutlet weak var eventDescription: UITextView!
     @IBOutlet weak var eventVenue: UILabel!
     @IBOutlet weak var eventAddress: UITextView!
+    @IBOutlet weak var eventWeather: UITextView!
     
-    
-    
-    
+    var highTemp: String?
+    var lowTemp: String?
+    var weatherDescription: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getWeatherData(for: 4684888){ (result) in
+                     
+                     switch result{
+                         
+                     case .success(let weather):
+                         currentWeather = [weather]
+                         
+                         print(currentWeather)
+                         
+                         let weatherUpdate = currentWeather[0]
+                         
+                         if let cityName = weatherUpdate.name{
+                             
+         //                    insert city name into app name variable
+                             
+                             print("The city name is \(cityName)")
+                         
+                         }
+                         
+                         if let getDescription = weatherUpdate.weather?.description{
+                            self.weatherDescription = getDescription
+                         }
+                         
+                         if let gethighTemp = weatherUpdate.main?.temp_max{
+                            let kelvinToFar = (gethighTemp - 273.15) * 9/5 + 32
+                            self.highTemp = String(kelvinToFar)
+                        }
+                         
+                         if let getlowTemp = weatherUpdate.main?.temp_min{
+                            let kelvintoFar = (getlowTemp - 273.15) * 9/5 + 32
+                            self.lowTemp = String(kelvintoFar)
+                         }
+                        
+                         self.eventWeather.text = "High: \(String(describing: self.highTemp)) \nLow: \(String(describing: self.lowTemp))"
+                         
+                     case .failure(let error):
+                         fatalError("Error: \(error.localizedDescription)")
+                     }
+                 }
         
         eventName.text = eventNameData
         eventDate.text = eventDateData
@@ -43,7 +85,6 @@ class EventDetailTableVC: UITableViewController {
         eventVenue.text = eventVenueData
         eventAddress.text = eventAddressData
         
-        fetchWeather()
         
         eventDetailTableView.reloadData()
         eventDetailTableView.tableFooterView = UIView()
@@ -58,7 +99,7 @@ class EventDetailTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return 7
     }
 
     /*

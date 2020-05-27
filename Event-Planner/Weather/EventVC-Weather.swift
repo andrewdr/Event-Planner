@@ -61,7 +61,7 @@ import Foundation
                         let weather = try decoder.decode(Weather.self, from: jsonData)
                         completion?(.success(weather))
                         
-                        print(weather)
+//                        print(weather)
                         
                     }catch{
                         
@@ -83,33 +83,12 @@ import Foundation
          task.resume()
         
     }
-    
-        func fetchWeather(){
             
-            getWeatherData(for: 4684888){ (result) in
-                
-                switch result{
-                    
-                case .success(let weather):
-                    currentWeather = [weather]
-                    
-                    let weatherUpdate = currentWeather[0]
-                    
-                    if let cityName = weatherUpdate.name{
-                        
-    //                    insert city name into app name variable
-                        
-                        print("The city name is \(cityName)")
-                    
-                        
-                    }
-                    
-                case .failure(let error):
-                    fatalError("Error: \(error.localizedDescription)")
-                }
-                
-            }
-        }
+            
+          
+            
+
+
     
 
 
