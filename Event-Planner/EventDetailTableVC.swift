@@ -62,15 +62,15 @@ class EventDetailTableVC: UITableViewController {
                          
                          if let gethighTemp = weatherUpdate.main?.temp_max{
                             let kelvinToFar = (gethighTemp - 273.15) * 9/5 + 32
-                            self.highTemp = String(kelvinToFar)
+                            self.highTemp = String(format: "%.1f °F", kelvinToFar)
                         }
                          
                          if let getlowTemp = weatherUpdate.main?.temp_min{
-                            let kelvintoFar = (getlowTemp - 273.15) * 9/5 + 32
-                            self.lowTemp = String(kelvintoFar)
+                            let kelvinToFar = (getlowTemp - 273.15) * 9/5 + 32
+                            self.lowTemp = String(format: "%.1f °F", kelvinToFar)
                          }
                         
-                         self.eventWeather.text = "High: \(String(describing: self.highTemp)) \nLow: \(String(describing: self.lowTemp))"
+                         self.eventWeather.text = "High: \(String(self.highTemp ?? "Not Available")) \nLow: \(String(self.lowTemp ?? "Not Available"))"
                          
                      case .failure(let error):
                          fatalError("Error: \(error.localizedDescription)")
