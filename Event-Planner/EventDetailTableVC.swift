@@ -70,7 +70,7 @@ class EventDetailTableVC: UITableViewController {
                             self.lowTemp = String(format: "%.1f °F", kelvinToFar)
                          }
                         
-                         self.eventWeather.text = "High: \(String(self.highTemp ?? "Not Available")) \nLow: \(String(self.lowTemp ?? "Not Available"))"
+                         self.eventWeather.text = "Current Weather \nHigh: \(String(self.highTemp ?? "Not Available")) \nLow: \(String(self.lowTemp ?? "Not Available"))"
                          
                      case .failure(let error):
                          fatalError("Error: \(error.localizedDescription)")
@@ -88,6 +88,10 @@ class EventDetailTableVC: UITableViewController {
         
         eventDetailTableView.reloadData()
         eventDetailTableView.tableFooterView = UIView()
+        
+        
+        
+       
     }
 
     // MARK: - Table view data source
@@ -99,7 +103,38 @@ class EventDetailTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
+        compareDates()
+        
         return 7
+    }
+    
+    func compareDates(){
+        
+        let currentUnformattedDate = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "E, MMM d, yyy"
+        
+        let currentDate = dateFormatter.string(from: currentUnformattedDate)
+        
+        if currentDate > eventDateData{
+            
+            print(currentDate, eventDateData)
+            
+            datePassedAlert()
+        }
+    }
+    
+    func datePassedAlert(){
+        
+        let datePassedAlert = UIAlertController(title: "Date Passed", message: "This event has passed, please remove this event.", preferredStyle: .alert)
+        
+        datePassedAlert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+        
+        self.present(datePassedAlert, animated: true, completion: nil)
+        
     }
 
     /*

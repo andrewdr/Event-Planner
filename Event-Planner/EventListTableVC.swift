@@ -34,7 +34,6 @@ class EventListTableVC: UITableViewController{
         
         eventListTableView.dataSource = self
         eventListTableView.delegate = self
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
