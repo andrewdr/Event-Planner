@@ -37,7 +37,7 @@ class EventDetailTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getWeatherData(for: 4684888){ (result) in
+        getWeather(for: "Dallas", state: "TX"){ (result) in
                      
                      switch result{
                          
@@ -88,10 +88,6 @@ class EventDetailTableVC: UITableViewController {
         
         eventDetailTableView.reloadData()
         eventDetailTableView.tableFooterView = UIView()
-        
-        
-        
-       
     }
 
     // MARK: - Table view data source

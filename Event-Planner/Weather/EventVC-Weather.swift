@@ -20,7 +20,7 @@ import Foundation
         
     }
 
-    func getWeatherData(for id:Int, completion:((Result<Weather>) -> Void)?){
+    func getWeather(for city:String, state:String, completion:((Result<Weather>) -> Void)?){
         
         // MARK - URL Creation
         var url_Components = URLComponents()
@@ -29,10 +29,10 @@ import Foundation
         url_Components.host = "api.openweathermap.org"
         url_Components.path = "/data/2.5/weather"
         
-        let userIdItem = URLQueryItem(name: "id", value: "\(id)")
+        let cityStateItem = URLQueryItem(name: "q", value: "\(city),\(state),US")
         let appIdItem = URLQueryItem(name: "appid", value: "\(API_Key)")
         
-        url_Components.queryItems = [userIdItem, appIdItem]
+        url_Components.queryItems = [cityStateItem, appIdItem]
         
         guard let url = url_Components.url else { fatalError("Could Not Create URL from Components")}
         
