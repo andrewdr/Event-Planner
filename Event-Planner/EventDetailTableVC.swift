@@ -20,6 +20,8 @@ class EventDetailTableVC: UITableViewController {
     var eventDescriptionData = String()
     var eventVenueData = String()
     var eventAddressData = String()
+    var cityName = String()
+    var stateCode = String()
     
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventDate: UILabel!
@@ -33,11 +35,32 @@ class EventDetailTableVC: UITableViewController {
     var highTemp: String?
     var lowTemp: String?
     var weatherDescription: String?
+    
+    func parseAddress(){
+        
+        let address = eventAddressData
+        
+        let comma = address.firstIndex(of: ",")!
+        let commaIndex = address.distance(from: address.startIndex, to: comma)
+        
+        let cityStart = address.index(address.startIndex, offsetBy: commaIndex + 2)
+        let cityEnd = address.index(address.endIndex, offsetBy: -10)
+        let cityRange = cityStart..<cityEnd
+        cityName = String(address[cityRange])
+        
+        let stateStart = address.index(address.endIndex, offsetBy: -8)
+        let stateEnd = address.index(address.endIndex, offsetBy: -5)
+        let stateRange = stateStart..<stateEnd
+        stateCode = String(address[stateRange])
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getWeather(for: "Dallas", state: "TX"){ (result) in
+        parseAddress()
+        
+        getWeather(for: cityName, state: stateCode){ (result) in
                      
                      switch result{
                          
