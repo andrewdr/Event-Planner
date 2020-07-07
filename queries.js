@@ -1,6 +1,6 @@
 const Pool = require('pg').Pool
 const pool = new Pool({
-  user: 'me',
+  user: 'epadmin',
   host: 'localhost',
   database: 'eventsdb',
   password: 'G10b2Pa&&rIY#ho',
@@ -27,9 +27,10 @@ const getEventsById = (request, response) => {
 }
 
 const createEvent = (request, response) => {
-  const { name, email } = request.body
+  const { eventname, eventdescription, eventdate, eventstarttime, eventendtime, eventvenue, eventaddress } = request.body
 
-  pool.query('INSERT INTO eventinfo (eventname, eventdescription, eventdate, eventstarttime, eventendtime, eventvenue, eventaddress) VALUES ($1, $2, $3, $4, $5, $6, $7)', [eventname, eventdescription, eventdate, eventstarttime, eventendtime, eventvenue, eventaddress], (error, results) => {
+  pool.query('INSERT INTO eventinfo (eventname, eventdescription, eventdate, eventstarttime, eventendtime, eventvenue, eventaddress) VALUES ($1, $2, $3, $4, $5, $6, $7)', 
+    [eventname, eventdescription, eventdate, eventstarttime, eventendtime, eventvenue, eventaddress], (error, results) => {
     if (error) {
       throw error
     }
@@ -39,11 +40,11 @@ const createEvent = (request, response) => {
 
 const updateEvent = (request, response) => {
   const id = parseInt(request.params.id)
-  const { name, email } = request.body
+  const { eventname, eventdescription, eventdate, eventstarttime, eventendtime, eventvenue, eventaddress } = request.body
 
   pool.query(
-    'UPDATE eventinfo SET name = $1, email = $2 WHERE id = $3',
-    [name, email, id],
+    'UPDATE eventinfo SET eventname = $1, eventdescription = $2, eventdate = $3, eventstarttime = $4, eventendtime = $5, eventvenue =$6, eventaddress = $7  WHERE id = $8',
+    [eventname, eventdescription, eventdate, eventstarttime, eventendtime, eventvenue, eventaddress, id],
     (error, results) => {
       if (error) {
         throw error
